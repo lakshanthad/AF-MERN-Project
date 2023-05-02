@@ -30,3 +30,6 @@ const getAllAnimalBlogs = async (req, res, next) => {
       console.log(err);
     });
 };
+
+exports.addAnimalBlog = addAnimalBlog;
+exports.getAllAnimalBlogs = getAllAnimalBlogs;
