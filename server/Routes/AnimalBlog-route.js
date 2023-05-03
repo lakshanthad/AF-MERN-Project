@@ -11,3 +11,5 @@ animalBlogRouter.delete(
   "/deleteAnimalBlog/:id",
   animalBlogController.deleteAnimalBlog
 );
+
+module.exports = animalBlogRouter;
