@@ -1,15 +1,9 @@
 const animalBlogRouter = require("express").Router();
 const animalBlogController = require("../Controllers/AnimalBlog-controller");
 
-animalBlogRouter.post("/addAnimalBlog", animalBlogController.addAnimalBlog);
-animalBlogRouter.get("/allAnimalBlog", animalBlogController.getAllAnimalBlogs);
-animalBlogRouter.put(
-  "/updateAnimalBlog/:id",
-  animalBlogController.updateAnimalBlog
-);
-animalBlogRouter.delete(
-  "/deleteAnimalBlog/:id",
-  animalBlogController.deleteAnimalBlog
-);
+animalBlogRouter.post("/add", animalBlogController.addAnimalBlog);
+animalBlogRouter.get("/allblogs", animalBlogController.getAllAnimalBlogs);
+animalBlogRouter.put("/update/:id", animalBlogController.updateAnimalBlog);
+animalBlogRouter.delete("/delete/:id", animalBlogController.deleteAnimalBlog);
 
 module.exports = animalBlogRouter;
