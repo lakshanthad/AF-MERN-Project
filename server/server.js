@@ -34,6 +34,10 @@ connection.once('open', ()=>{
 const animalBlog_router = require("./Routes/AnimalBlog-route");
 app.use("/animalblog", animalBlog_router);
 
+//AgriBlog Routes
+const agriBlogRouter = require ('./Routes/AgriBlog-route');
+app.use("/agriBlog", agriBlogRouter);
+
 app.listen(PORT,()=>{
     console.log(`Server is up and running on port number: ${PORT} !`);
 })
