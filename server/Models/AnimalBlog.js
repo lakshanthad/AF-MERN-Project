@@ -12,8 +12,14 @@ const animalBlogSchema = new Schema({
     required: true,
   },
   Thumbnail: {
-    type: String,
-    required: true,
+    public_id: {
+      type: String,
+      required: true,
+    },
+    url: {
+      type: String,
+      required: true,
+    },
   },
 });
 

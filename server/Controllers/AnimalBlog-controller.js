@@ -1,13 +1,23 @@
 const AnimalBlog = require("../Models/AnimalBlog");
+const cloudinary = require("../utils/cloudinary");
 
 //add a animal Blog
 const addAnimalBlog = async (req, res, next) => {
   const { Title, Description, Thumbnail } = req.body;
 
+  const result = await cloudinary.uploader.upload(Thumbnail, {
+    folder: "AnimalBlogImages",
+    // width: 300,
+    // crop: "scale",
+  });
+
   const newAnimalBlog = new AnimalBlog({
     Title,
     Description,
-    Thumbnail,
+    Thumbnail: {
+      public_id: result.public_id,
+      url: result.secure_url,
+    },
   });
 
   newAnimalBlog
