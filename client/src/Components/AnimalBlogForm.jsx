@@ -18,64 +18,10 @@ const useStyles = makeStyles({
 export default function AnimalBlogForm() {
   const classes = useStyles();
 
-  const [Title, setTitle] = useState("");
-  const [Description, setDescription] = useState("");
-  const [Thumbnail, setThumbnail] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("/api/category/all")
-      .then((cat) => {
-        console.log(cat.data.categories);
-        setCategories(cat.data.categories);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  //handle and convert it in base 64
-  const handleImage = (e) => {
-    const file = e.target.files[0];
-    setFileToBase(file);
-    console.log(file);
-  };
-
-  const setFileToBase = (file) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setThumbnail(reader.result);
-    };
-  };
-
-  const submitForm = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await axios.post(
-        "http://localhost:8070/animalblog/add",
-        {
-          Title,
-          Description,
-          Thumbnail,
-        }
-      );
-      if (data.success === true) {
-        setTitle("");
-        setDescription("");
-        setThumbnail("");
-        toast.success("product created successfully");
-      }
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   return (
     <div className="animalblogform">
       <p className="formTopic">Animal Extension Service Blog</p>
-      <form onSubmit={submitForm}>
+      <form>
         <TextField
           id="filled-basic"
           label="Title"
@@ -96,7 +42,7 @@ export default function AnimalBlogForm() {
         <br />
         <br />
         <br />
-        <Input type="file" onChange={handleImage} />
+        <Input type="file" />
         <br />
         <br />
         <br />
