@@ -1,7 +1,12 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Animal from './Components/AnimalProduction/Animal';
+import Animal from "./Components/Animal";
+import AnimalBlogLogin from "./Components/AnimalBlogLogin";
+import TestImageForm from "./Components/TestImageForm";
+import ImageGrid from "./Components/ImageGrid";
+import AnimalBlog from "./Components/AnimalBlog";
+
 import Beef from './Components/AnimalProduction/Beef';
 import Test from './Components/AnimalProduction/Test';
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
@@ -21,6 +26,11 @@ export default function App() {
   return (
     <Router>
       <Routes>
+      
+        <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
+        <Route path="/testimage" element={<TestImageForm />}></Route>
+        <Route path="/allimages" element={<ImageGrid />}></Route>
+        <Route path="/animalArticle" element={<AnimalBlog />}></Route>
         <Route path="/" element={<Animal/>}></Route>
         <Route path="/beef" element={<> <Beef/> <APNavbar/> <Footer/></>}></Route>
         <Route path="/test" element={<Test/>}></Route>
