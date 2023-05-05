@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 8070;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 //connect database
 const URL = process.env.MONGODB_URL;
@@ -34,6 +35,10 @@ app.use("/animalblog", animalBlog_router);
 //AgriBlog Routes
 const agriBlogRouter = require("./Routes/AgriBlog-route");
 app.use("/agriBlog", agriBlogRouter);
+
+//Test Image
+const imageRouter = require("./Routes/ImageTest-route");
+app.use("/imageTest", imageRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT} !`);

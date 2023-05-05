@@ -1,31 +1,24 @@
 const AnimalBlog = require("../Models/AnimalBlog");
-const firebase = require("firebase");
-const { Storage } = require("@google-cloud/storage");
-const { v4: uuidv4 } = require("uuid");
-const mongoose = require("mongoose");
 
 //add a animal Blog
-// const addAnimalBlog = async (req, res, next) => {
-//   const { Title, Description, Thumbnail } = req.body;
+const addAnimalBlog = async (req, res, next) => {
+  const { Title, Description, Thumbnail } = req.body;
 
-//   const newAnimalBlog = new AnimalBlog({
-//     Title,
-//     Description,
-//     Thumbnail: {
-//       public_id: result.public_id,
-//       url: result.secure_url,
-//     },
-//   });
+  const newAnimalBlog = new AnimalBlog({
+    Title,
+    Description,
+    Thumbnail,
+  });
 
-//   newAnimalBlog
-//     .save()
-//     .then(() => {
-//       res.json("Animal Blog Added");
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// };
+  newAnimalBlog
+    .save()
+    .then(() => {
+      res.json("Animal Blog Added");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
 //read all animal Blogs
 const getAllAnimalBlogs = async (req, res, next) => {
