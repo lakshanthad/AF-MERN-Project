@@ -5,6 +5,7 @@ import Animal from "./Components/Animal";
 import AnimalBlogLogin from "./Components/AnimalBlogLogin";
 import TestImageForm from "./Components/TestImageForm";
 import ImageGrid from "./Components/ImageGrid";
+import AnimalBlog from "./Components/AnimalBlog";
 
 export default function App() {
   return (
@@ -16,6 +17,8 @@ export default function App() {
         <Route path="/testimage" element={<TestImageForm />}></Route>
 
         <Route path="/allimages" element={<ImageGrid />}></Route>
+
+        <Route path="/animalArticle" element={<AnimalBlog />}></Route>
       </Routes>
     </Router>
   );

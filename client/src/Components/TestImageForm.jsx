@@ -19,7 +19,6 @@ export default function TestImageForm() {
 
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
-  //   const [articlebody, setArticlebody] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
@@ -31,10 +30,6 @@ export default function TestImageForm() {
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
-
-  //   const handleBodyChange = (event) => {
-  //     setArticlebody(event.target.value);
-  //   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -67,9 +62,11 @@ export default function TestImageForm() {
 
   return (
     <div className="animalblogform">
-      <p className="formTopic">Animal Extension Service Blog</p>
+      <p className="formTopic">Add Animal Blog</p>
       <form onSubmit={handleSubmit}>
-        {/* {image && <img src={image.image} alt={image.title} />} */}
+        {image && <img src={image.image} alt={image.title} />}
+        <br />
+        <br />
         <TextField
           id="filled-basic"
           label="Title"
@@ -83,7 +80,7 @@ export default function TestImageForm() {
 
         <TextField
           id="outlined-multiline-static"
-          label="Description"
+          label="Article Body"
           multiline
           rows={10}
           style={{ width: "100%" }}

@@ -3,7 +3,7 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const sharp = require("sharp");
-const Image = require("../Models/ImageTest");
+const AnimalArticle = require("../Models/ImageTest");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -26,7 +26,7 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     const imagePath = `/Assets/animalblogs/${imageName}`;
 
     // Save file path to MongoDB
-    const image = await Image.create({
+    const image = await AnimalArticle.create({
       title,
       articlebody,
       image: imagePath,
@@ -44,8 +44,22 @@ router.post("/upload", upload.single("image"), async (req, res) => {
 //get all images
 router.get("/images", async (req, res) => {
   try {
-    const images = await Image.find({}, { title: 1, image: 1 });
+    const images = await AnimalArticle.find(
+      {},
+      { title: 1, articlebody: 1, image: 1 }
+    );
     res.json(images);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+// get single article
+router.get("/article/:id", async (req, res) => {
+  try {
+    const article = await AnimalArticle.findById(req.params.id);
+    res.json(article);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
