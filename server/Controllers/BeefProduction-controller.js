@@ -4,7 +4,9 @@ const BeefProduction = require("../Models/BeefProduction");
 //this controller is used to add a new beef production.
 const addBeefProduction = async (req, res, next) => {
     const { 
-        Population, 
+        Population,
+        District,
+        SecretariatDivision,
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -20,7 +22,9 @@ const addBeefProduction = async (req, res, next) => {
     } = req.body;
 
     const newBeefProduction = new BeefProduction({
-        Population, 
+        Population,
+        District,
+        SecretariatDivision,
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -71,7 +75,9 @@ const updateBeefProduction = async (req, res, next) => {
     let beefProductionID = req.params.id;
 
     const { 
-        Population, 
+        Population,
+        District,
+        SecretariatDivision, 
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -87,7 +93,9 @@ const updateBeefProduction = async (req, res, next) => {
     } = req.body;
 
     const updateBeefProduction = {
-        Population, 
+        Population,
+        District,
+        SecretariatDivision, 
         NeedPerPerson, 
         Consuption,
         NeedPerDay,

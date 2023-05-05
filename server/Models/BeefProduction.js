@@ -8,6 +8,16 @@ const beefProductionSchema = new schema({
         type: String,
         required: true
     },
+    
+    District: {
+        type: String,
+        required: true
+    },
+
+    SecretariatDivision: {
+        type: String,
+        required: true
+    },
 
     NeedPerPerson: {
         type: String,

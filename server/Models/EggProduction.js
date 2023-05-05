@@ -1,14 +1,13 @@
 const mongoose = require('mongoose');
-
 const schema = mongoose.Schema;
 
-const milkProductionSchema = new schema({
+const eggProductionSchema = new schema({
     
     Population: {
         type: String,
         required: true
     },
-
+    
     District: {
         type: String,
         required: true
@@ -29,12 +28,12 @@ const milkProductionSchema = new schema({
         required: true
     },
 
-    NeedPerDay: {
+    NeedAsPerDivision: {
         type: String,
         required: true
     },
 
-    NeedPerYearInMl: {
+    NeedPerYear: {
         type: String,
         required: true
     },
@@ -49,22 +48,22 @@ const milkProductionSchema = new schema({
         required: true
     },
 
-    AvgWeightOfCow: {
+    DomesticChickens: {
         type: String,
         required: true
     },
 
-    AvgMilkProductionPerYear: {
+    HensPresent: {
         type: String,
         required: true
     },
 
-    CowsPresent: {
+    AnnualProductonOfAHen: {
         type: String,
         required: true
-    },
+    },    
 
-    CowsToIncreaseProduction: {
+    HensToIncreaseProduction: {
         type: String,
         required: true
     },
@@ -75,5 +74,5 @@ const milkProductionSchema = new schema({
     },
 })
 
-const milkProduction = mongoose.model("MilkProduction", milkProductionSchema);
-module.exports = milkProduction;
+const eggProduction = mongoose.model("EggProduction", eggProductionSchema);
+module.exports = eggProduction;

@@ -4,7 +4,9 @@ const MilkProduction = require("../Models/MilkProduction");
 //this controller is used to add a new milk production.
 const addMilkProduction = async (req, res, next) => {
     const { 
-        Population, 
+        Population,
+        District,
+        SecretariatDivision, 
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -19,7 +21,9 @@ const addMilkProduction = async (req, res, next) => {
     } = req.body;
 
     const newMilkProduction = new MilkProduction({
-        Population, 
+        Population,
+        District,
+        SecretariatDivision, 
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -69,7 +73,9 @@ const updateMilkProduction = async (req, res, next) => {
     let milkProductionID = req.params.id;
 
     const { 
-        Population, 
+        Population,
+        District,
+        SecretariatDivision,  
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
@@ -84,7 +90,9 @@ const updateMilkProduction = async (req, res, next) => {
     } = req.body;
 
     const updateMilkProduction = {
-        Population, 
+        Population,
+        District,
+        SecretariatDivision,  
         NeedPerPerson, 
         Consuption,
         NeedPerDay,
