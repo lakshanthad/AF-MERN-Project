@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function GoatMilk() {
+export default function Goat() {
   const classes = useStyles();
   const [animal, setAnimal] = useState({
     name: '',
@@ -108,7 +108,7 @@ export default function GoatMilk() {
       
     <form className={classes.form} onSubmit={handleSubmit}>
     
-    <h1 className='h1'>Goat Milk Production Details</h1>
+    <h1 className='h1'>Goat Production Details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
@@ -165,7 +165,7 @@ export default function GoatMilk() {
 
       <TextField
         className={classes.input}
-        label="Chicken production per year ( per poultry )"
+        label="Goat production per year ( per poultry )"
         variant="outlined"
         color='primary'
         name="habitat"
