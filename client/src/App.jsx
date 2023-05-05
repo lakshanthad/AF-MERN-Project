@@ -1,14 +1,19 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Animal from "./Components/Animal";
-import AnimalBlogLogin from "./Components/AnimalBlogLogin";
-import TestImageForm from "./Components/TestImageForm";
-import ImageGrid from "./Components/ImageGrid";
-import AnimalBlog from "./Components/AnimalBlog";
 
+import AnimalBlogLogin from "./Components/AnimalBlogLogin";
+import TestImageForm from "./Components/AnimalBlog/TestImageForm";
+import ImageGrid from "./Components/AnimalBlog/ImageGrid";
+import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
+
+import Animal from "./Components/Animal";
 import Beef from './Components/AnimalProduction/Beef';
 import Test from './Components/AnimalProduction/Test';
+import Milk from "./Components/AnimalProduction/Milk";
+import APNavbar from "./Components/AnimalProduction/APNavbar";
+import Footer from "./Components/Footer";
+
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
@@ -18,9 +23,7 @@ import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
 import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriGrassNavbar";
-import Milk from "./Components/AnimalProduction/Milk";
-import APNavbar from "./Components/AnimalProduction/APNavbar";
-import Footer from "./Components/Footer";
+
 
 export default function App() {
   return (
