@@ -7,7 +7,7 @@ const Image = require("../Models/ImageTest");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "../client/src/Assets/images");
+    cb(null, "../client/public/Assets/animalblogs");
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}${path.extname(file.originalname)}`);
@@ -20,13 +20,15 @@ const upload = multer({ storage });
 router.post("/upload", upload.single("image"), async (req, res) => {
   try {
     const { title } = req.body;
+    const { articlebody } = req.body;
     const { filename: imageName } = req.file;
 
-    const imagePath = `../Assets/images/${imageName}`;
+    const imagePath = `/Assets/animalblogs/${imageName}`;
 
     // Save file path to MongoDB
     const image = await Image.create({
       title,
+      articlebody,
       image: imagePath,
     });
 

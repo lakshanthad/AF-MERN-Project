@@ -1,9 +1,25 @@
 import React, { useState } from "react";
 import axios from "axios";
+import TextField from "@mui/material/TextField";
+import { Input, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import { toast } from "react-toastify";
+import "../Components/css/Blogform.css";
+
+const useStyles = makeStyles({
+  textField: {
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      borderColor: "green", // change the border color when focused
+    },
+  },
+});
 
 export default function TestImageForm() {
+  const classes = useStyles();
+
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
+  //   const [articlebody, setArticlebody] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
@@ -16,6 +32,10 @@ export default function TestImageForm() {
     setTitle(event.target.value);
   };
 
+  //   const handleBodyChange = (event) => {
+  //     setArticlebody(event.target.value);
+  //   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -24,6 +44,7 @@ export default function TestImageForm() {
       const formData = new FormData();
       formData.append("image", file);
       formData.append("title", title);
+      formData.append("articlebody", title);
 
       const response = await axios.post(
         "http://localhost:8070/imageTest/upload",
@@ -36,6 +57,7 @@ export default function TestImageForm() {
       );
 
       setImage(response.data);
+      toast.success("Article Uploaded");
     } catch (error) {
       setError(error.response.data.error);
     } finally {
@@ -44,20 +66,48 @@ export default function TestImageForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      {image && <img src={image.image} alt={image.title} />}
-      <label>
-        Title:
-        <input type="text" value={title} onChange={handleTitleChange} />
-      </label>
-      <label>
-        Choose image:
-        <input type="file" onChange={handleFileChange} />
-      </label>
-      <button type="submit" disabled={!file || loading}>
-        Upload
-      </button>
-      {error && <p>{error}</p>}
-    </form>
+    <div className="animalblogform">
+      <p className="formTopic">Animal Extension Service Blog</p>
+      <form onSubmit={handleSubmit}>
+        {/* {image && <img src={image.image} alt={image.title} />} */}
+        <TextField
+          id="filled-basic"
+          label="Title"
+          value={title}
+          className={classes.textField}
+          onChange={handleTitleChange}
+        />
+        <br />
+        <br />
+        <br />
+
+        <TextField
+          id="outlined-multiline-static"
+          label="Description"
+          multiline
+          rows={10}
+          style={{ width: "100%" }}
+          className={classes.textField}
+          //   onChange={handleBodyChange}
+        />
+        <br />
+        <br />
+        <br />
+        <Input type="file" onChange={handleFileChange} />
+        <br />
+        <br />
+        <br />
+        <Button
+          type="submit"
+          variant="contained"
+          size="large"
+          style={{ backgroundColor: "green", color: "white", width: "20%" }}
+          disabled={!file || loading}
+        >
+          Post
+        </Button>
+        {error && <p>{error}</p>}
+      </form>
+    </div>
   );
 }

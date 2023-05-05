@@ -22,7 +22,6 @@ export default function ImageGrid() {
 
   return (
     <div className="image-grid">
-      <img src="../Assets/images" />
       {images.map((image) => (
         <div key={image._id} className="image-card">
           <img src={image.image} alt={image.title} />

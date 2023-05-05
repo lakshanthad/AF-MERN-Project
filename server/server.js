@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 8070;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static("public"));
+app.use(express.static("../client/src/Assets/images"));
+app.use(express.static("../client/src/Assets/animalblogs"));
 
 //connect database
 const URL = process.env.MONGODB_URL;
@@ -27,10 +28,6 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB connection success !!");
 });
-
-//AnimalBlog Routes
-const animalBlog_router = require("./Routes/AnimalBlog-route");
-app.use("/animalblog", animalBlog_router);
 
 //AgriBlog Routes
 const agriBlogRouter = require("./Routes/AgriBlog-route");

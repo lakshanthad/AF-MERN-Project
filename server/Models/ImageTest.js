@@ -7,6 +7,10 @@ const imageSchema = new Schema({
     type: String,
     required: true,
   },
+  articlebody: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
