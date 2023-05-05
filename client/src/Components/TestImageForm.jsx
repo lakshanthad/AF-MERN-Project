@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Input, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { toast } from "react-toastify";
 import "../Components/css/Blogform.css";
+// import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const useStyles = makeStyles({
   textField: {
@@ -19,6 +21,7 @@ export default function TestImageForm() {
 
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
+  const [articlebody, setarticlebody] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
@@ -31,6 +34,10 @@ export default function TestImageForm() {
     setTitle(event.target.value);
   };
 
+  const handleArticleBodyChange = (event) => {
+    setarticlebody(event.target.value);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -39,7 +46,7 @@ export default function TestImageForm() {
       const formData = new FormData();
       formData.append("image", file);
       formData.append("title", title);
-      formData.append("articlebody", title);
+      formData.append("articlebody", articlebody);
 
       const response = await axios.post(
         "http://localhost:8070/imageTest/upload",
@@ -52,7 +59,6 @@ export default function TestImageForm() {
       );
 
       setImage(response.data);
-      toast.success("Article Uploaded");
     } catch (error) {
       setError(error.response.data.error);
     } finally {
@@ -85,7 +91,7 @@ export default function TestImageForm() {
           rows={10}
           style={{ width: "100%" }}
           className={classes.textField}
-          //   onChange={handleBodyChange}
+          onChange={handleArticleBodyChange}
         />
         <br />
         <br />
