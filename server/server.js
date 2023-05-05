@@ -42,6 +42,10 @@ app.use("/agriBlog", agriBlogRouter);
 const beefProductionRouter = require ("./Routes/BeefProduction-route");
 app.use("/beefProduction", beefProductionRouter);
 
+//Milk production routes.
+const milkProductionRouter = require ("./Routes/MilkProduction-route");
+app.use("/milkProduction", milkProductionRouter);
+
 app.listen(PORT,()=>{
     console.log(`Server is up and running on port number: ${PORT} !`);
 })
