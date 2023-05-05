@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Beef() {
+export default function Milk() {
   const classes = useStyles();
   const [animal, setAnimal] = useState({
     name: '',
@@ -100,7 +100,6 @@ export default function Beef() {
     { label: 'Abilipitiya', division: "Abilipitiya" },
     { label: 'Kollonna', division: "Kollonna" }, // Rathnapura divisions list ends
 
-
   ];
 
   return (
@@ -108,7 +107,7 @@ export default function Beef() {
       
     <form className={classes.form} onSubmit={handleSubmit}>
     
-    <h1 className='h1'>Cattle Details</h1>
+    <h1 className='h1'>Milk Production Details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
@@ -129,7 +128,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Population"
+        label="Cattle Population"
         variant="outlined"
         name="species" // name from the animal object
         value={animal.species}
@@ -155,7 +154,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Production Surplus / Deficit"
+        label=" Production Surplus / Deficit"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -165,7 +164,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Avg weight of cows"
+        label="Avg milk production per year"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -175,7 +174,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Amount of cows to increase production"
+        label="Amount of cattle to increase production"
         variant="outlined"
         color='primary'
         name="habitat"
