@@ -37,7 +37,7 @@ router.post("/upload", upload.single("image"), async (req, res) => {
 //get all images
 router.get("/images", async (req, res) => {
   try {
-    const images = await Image.find({}, { title: 1, image: 1, articlebody: 1 });
+    const images = await Image.find({}, { title: 1, articlebody: 1, image: 1 });
     res.json(images);
   } catch (error) {
     console.error(error);

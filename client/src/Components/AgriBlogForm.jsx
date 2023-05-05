@@ -23,6 +23,7 @@ export default function AgriBlogForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
+  const [articlebody, setArticlebody] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -31,6 +32,10 @@ export default function AgriBlogForm() {
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   };
+
+  const handleArticlebodyChange = (event) => {
+    setArticlebody(event.target.value);
+  }
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -69,7 +74,7 @@ export default function AgriBlogForm() {
 
   return (
     <div className="animalblogform">
-      <p className="formTopic">Animal Extension Service Blog</p>
+      <p className="formTopic">Agriculture Extension Service Blog</p>
       <form onSubmit={handleSubmit}>
         <TextField
           id="filled-basic"
@@ -88,6 +93,7 @@ export default function AgriBlogForm() {
           rows={10}
           style={{ width: "100%" }}
           className={classes.textField}
+          onChange={handleArticlebodyChange}
         />
         <br />
         <br />
