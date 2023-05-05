@@ -11,6 +11,11 @@ import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
 import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriGrassNavbar";
+import AgriServices from "./Components/AgriServices";
+import AnimalServices from "./Components/AnimalServices";
+import SelectionPageStaff from "./Components/SelectionPageStaff";
+import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
+import AgriStaffNavbar from "./Components/AgriStaffNavbar";
 
 export default function App() {
   return (
@@ -24,7 +29,9 @@ export default function App() {
         <Route path="/selectionPage" element={<SelectionPage/>}></Route>
         <Route path="/AnimalDataTable" element={<>  <AnimalGrassNavbar/> <AnimalDataTable/> </>}/>
         <Route path="/agriTable" element={<><AgriGrassNavbar/> <AgriDataTable/></>}/>
-       
+        <Route path="/agriServices" element={<><AgriStaffNavbar/><AgriServices/></>}/>
+        <Route path="/animalServices" element={<><AnimalStaffNavbar/><AnimalServices/></>}/>
+        <Route path="/selectionStaff" element={<SelectionPageStaff/>}/>
       </Routes>
     </Router>
   );
