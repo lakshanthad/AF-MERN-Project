@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Milk() {
+export default function Egg() {
   const classes = useStyles();
   const [animal, setAnimal] = useState({
     name: '',
@@ -100,6 +100,7 @@ export default function Milk() {
     { label: 'Abilipitiya', division: "Abilipitiya" },
     { label: 'Kollonna', division: "Kollonna" }, // Rathnapura divisions list ends
 
+
   ];
 
   return (
@@ -107,7 +108,7 @@ export default function Milk() {
       
     <form className={classes.form} onSubmit={handleSubmit}>
     
-    <h1 className='h1'>Milk Production Details</h1>
+    <h1 className='h1'>Egg Production Details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
@@ -128,7 +129,7 @@ export default function Milk() {
 
       <TextField
         className={classes.input}
-        label="Cattle Population"
+        label="Poultry population"
         variant="outlined"
         name="species" // name from the animal object
         value={animal.species}
@@ -154,7 +155,7 @@ export default function Milk() {
 
       <TextField
         className={classes.input}
-        label=" Production Surplus / Deficit"
+        label="Production Surplus / Deficit"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -164,7 +165,7 @@ export default function Milk() {
 
       <TextField
         className={classes.input}
-        label="Avg milk production per year"
+        label="Egg production per year ( per poultry )"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -174,7 +175,7 @@ export default function Milk() {
 
       <TextField
         className={classes.input}
-        label="Amount of cattle to increase production"
+        label="Amount of poultry to increase production"
         variant="outlined"
         color='primary'
         name="habitat"

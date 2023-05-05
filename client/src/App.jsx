@@ -14,6 +14,8 @@ import AgriDataTable from "./Components/AgriDataTable";
 import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriGrassNavbar";
 import Milk from "./Components/AnimalProduction/Milk";
+import Egg from "./Components/AnimalProduction/Egg";
+import Pork from "./Components/AnimalProduction/Pork";
 import APNavbar from "./Components/AnimalProduction/APNavbar";
 import Footer from "./Components/Footer";
 
@@ -26,6 +28,8 @@ export default function App() {
         <Route path="/test" element={<Test/>}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route path="/milk" element={<> <Milk/> <APNavbar/> <Footer/></>}></Route>
+        <Route path="/egg" element={<> <Egg/> <APNavbar/> <Footer/></>}></Route>
+        <Route path="/pork" element={<> <Pork/> <APNavbar/> <Footer/></>}></Route>
         <Route path="/landingStaff" element={ <> <NavLandingStaff/> <LandingPageStaff />  </> }></Route>
         <Route path="/landingGrassroot" element={ <> <LandingPageGrassroot />  </>}></Route>
         <Route path="/selectionPage" element={<SelectionPage/>}></Route>
