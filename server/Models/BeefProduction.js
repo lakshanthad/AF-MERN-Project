@@ -4,67 +4,67 @@ const schema = mongoose.Schema;
 
 const beefProductionSchema = new schema({
     
-    population: {
-        type: Number,
-        required: true
-    },
-
-    needPerPerson: {
+    Population: {
         type: String,
         required: true
     },
 
-    consuption: {
+    NeedPerPerson: {
         type: String,
         required: true
     },
 
-    needPerDay: {
+    Consuption: {
         type: String,
         required: true
     },
 
-    needPerYearInKg: {
+    NeedPerDay: {
         type: String,
         required: true
     },
 
-    needPerYearInTons: {
+    NeedPerYearInKg: {
         type: String,
         required: true
     },
 
-    production: {
+    NeedPerYearInTons: {
         type: String,
         required: true
     },
 
-    surplusOrDeficit: {
+    Production: {
         type: String,
         required: true
     },
 
-    avgWeightOfCow: {
+    SurplusOrDeficit: {
         type: String,
         required: true
     },
 
-    meetPercentageFromWeight: {
+    AvgWeightOfCow: {
         type: String,
         required: true
     },
 
-    cowsPresent: {
+    MeatPercentageFromWeight: {
         type: String,
         required: true
     },
 
-    cowsToIncreaseProduction: {
+    CowsPresent: {
         type: String,
         required: true
     },
 
-    year: {
+    CowsToIncreaseProduction: {
+        type: String,
+        required: true
+    },
+
+    Year: {
         type: String,
         required: true
     },
