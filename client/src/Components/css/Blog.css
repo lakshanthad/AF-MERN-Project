@@ -13,3 +13,11 @@
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
+.blogimage {
+  width: 100%;
+}
+.articlebody {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
