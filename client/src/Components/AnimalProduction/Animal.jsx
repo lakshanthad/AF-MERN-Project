@@ -1,7 +1,16 @@
 import  { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import { createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1a8b1f', // Set your desired primary color here
+    },
+  },
+});
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -13,15 +22,16 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     margin: theme.spacing(1),
-    width: '80%',
+    width: '50%',
   },
   button: {
     margin: theme.spacing(2),
-    width: '80%',
+    width: '50%',
   },
+
 }));
 
-function AnimalForm() {
+export default function Animal() {
   const classes = useStyles();
   const [animal, setAnimal] = useState({
     name: '',
@@ -44,7 +54,10 @@ function AnimalForm() {
   };
 
   return (
+    <ThemeProvider theme={theme}>
     <form className={classes.form} onSubmit={handleSubmit}>
+
+      <h1>Meka wada yakoooooo</h1>
       <TextField
         className={classes.input}
         label="Name"
@@ -73,20 +86,23 @@ function AnimalForm() {
         className={classes.input}
         label="Habitat"
         variant="outlined"
+        color='primary'
         name="habitat"
         value={animal.habitat}
         onChange={handleChange}
       />
+   
       <Button
         className={classes.button}
         variant="contained"
         color="primary"
         type="submit"
       >
-        Submit
+        Add Animal
       </Button>
     </form>
+    </ThemeProvider>
   );
 }
 
-export default AnimalForm;
+
