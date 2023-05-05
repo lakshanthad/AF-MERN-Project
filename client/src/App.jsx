@@ -18,6 +18,7 @@ import AnimalServices from "./Components/AnimalServices";
 import SelectionPageStaff from "./Components/SelectionPageStaff";
 import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
 import AgriStaffNavbar from "./Components/AgriStaffNavbar";
+import ImageGridAgri from "./Components/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlogForm";
 
 export default function App() {
@@ -33,10 +34,10 @@ export default function App() {
         <Route path="/selectionPage" element={<SelectionPage/>}></Route>
         <Route path="/AnimalDataTable" element={<>  <AnimalGrassNavbar/> <AnimalDataTable/> </>}/>
         <Route path="/agriTable" element={<><AgriGrassNavbar/> <AgriDataTable/></>}/>
-        <Route path="/agriServices" element={<><AgriStaffNavbar/><AgriServices/></>}/>
         <Route path="/animalServices" element={<><AnimalStaffNavbar/><AnimalServices/></>}/>
         <Route path="/selectionStaff" element={<SelectionPageStaff/>}/>
         <Route path="/agriForm" element={<AgriBlogForm/>}/>
+        <Route path="/agriServices" element={<><AgriStaffNavbar/><ImageGridAgri /></>}></Route>
       </Routes>
     </Router>
   );

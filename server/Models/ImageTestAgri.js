@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+
 const Schema = mongoose.Schema;
-const agriBlogSchema = new Schema({
+
+const imageSchema = new Schema({
   title: {
     type: String,
     required: true,
@@ -14,5 +16,7 @@ const agriBlogSchema = new Schema({
     required: true,
   },
 });
-const AgriBlog = mongoose.model("AgriBlog", agriBlogSchema);
-module.exports = AgriBlog;
+
+const ImageAgri = mongoose.model("ImageTestAgri", imageSchema);
+
+module.exports = ImageAgri;

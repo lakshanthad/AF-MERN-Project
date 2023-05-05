@@ -1,54 +1,55 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
+  title: {
+    flexGrow: 1,
+  },
+  button: {
+    marginRight: theme.spacing(2),
+  },
+}));
 export default function AgriStaffNavbar() {
+  const classes = useStyles();
   const navigate = useNavigate();
-
   const handleAddNew = () => {
-    navigate("/animal");
+    navigate("/agriForm");
   };
-
+  const handleMenuClick = () => {
+    navigate("/selectionStaff");
+  };
   return (
-    <nav
-      className="navbar navbar-expand-lg"
-      style={{ backgroundColor: "#1a8b1f" }}
-    >
-      <div className="container-fluid navCss">
-        NAVBAR - Staff - Agri
-        <ul
-          class="navbar-nav me-auto mb-2 mb-lg-0"
-          style={{ marginLeft: "20px" }}
-        >
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <b>Articles-Agri</b>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <b>Articles-Animal</b>
-            </a>
-          </li>
-        </ul>
+    <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
+      <Toolbar>
+        <Typography variant="h6" className={classes.title}>
+          NAVBAR - Staff - Agri
+        </Typography>
+        <Button color="inherit" className={classes.button}>
+          <b>Articles-Agri</b>
+        </Button>
+        <Button color="inherit" className={classes.button}>
+          <b>Articles-Animal</b>
+        </Button>
         <div className="ml-auto">
-          <button
-            className="btn btn-outline-light me-2"
-            type="button"
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.button}
             onClick={handleAddNew}
           >
             Add New
-          </button>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarText"
-            aria-controls="navbarText"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          ></button>
+          </Button>
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.button}
+            onClick={handleMenuClick}
+          >
+            Menu
+          </Button>
         </div>
-      </div>
-    </nav>
+      </Toolbar>
+    </AppBar>
   );
 }
