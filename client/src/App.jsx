@@ -13,13 +13,14 @@ import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
 import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriGrassNavbar";
-import AgriServices from "./Components/AgriServices";
 import AnimalServices from "./Components/AnimalServices";
 import SelectionPageStaff from "./Components/SelectionPageStaff";
 import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
 import AgriStaffNavbar from "./Components/AgriStaffNavbar";
 import ImageGridAgri from "./Components/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlogForm";
+import AgriBlog from "./Components/AgriBlog";
+
 
 export default function App() {
   return (
@@ -38,6 +39,8 @@ export default function App() {
         <Route path="/selectionStaff" element={<SelectionPageStaff/>}/>
         <Route path="/agriForm" element={<AgriBlogForm/>}/>
         <Route path="/agriServices" element={<><AgriStaffNavbar/><ImageGridAgri /></>}></Route>
+        <Route path="/agriArticle" element={<AgriBlog/>}/>
+      
       </Routes>
     </Router>
   );
