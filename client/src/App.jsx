@@ -18,6 +18,7 @@ import AnimalServices from "./Components/AnimalServices";
 import SelectionPageStaff from "./Components/SelectionPageStaff";
 import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
 import AgriStaffNavbar from "./Components/AgriStaffNavbar";
+import AgriBlogForm from "./Components/AgriBlogForm";
 
 export default function App() {
   return (
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/agriServices" element={<><AgriStaffNavbar/><AgriServices/></>}/>
         <Route path="/animalServices" element={<><AnimalStaffNavbar/><AnimalServices/></>}/>
         <Route path="/selectionStaff" element={<SelectionPageStaff/>}/>
+        <Route path="/agriForm" element={<AgriBlogForm/>}/>
       </Routes>
     </Router>
   );

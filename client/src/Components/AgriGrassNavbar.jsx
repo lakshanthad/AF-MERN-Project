@@ -15,18 +15,6 @@ export default function AgriGrassNavbar() {
   >
     <div className="container-fluid navCss">
       NAVBAR - Grass - Agri
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" style={{ marginLeft: "20px" }}>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <b>Articles-Agri</b>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
-            <b>Articles-Animal</b>
-          </a>
-        </li>
-      </ul>
       <div className="ml-auto">
         <button
           className="btn btn-outline-light me-2"
