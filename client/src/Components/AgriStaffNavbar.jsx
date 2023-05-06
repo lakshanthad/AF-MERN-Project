@@ -18,6 +18,10 @@ export default function AgriStaffNavbar() {
   const handleAddNew = () => {
     navigate("/agriForm");
   }
+
+  const handleLogoutClick = () => {
+    navigate("/landingGrassroot");
+  };
   return (
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
@@ -32,6 +36,14 @@ export default function AgriStaffNavbar() {
             onClick={handleAddNew}
           >
             Add New
+          </Button>
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.button}
+            onClick={handleLogoutClick}
+          >
+            Log out
           </Button>
         </div>
       </Toolbar>
