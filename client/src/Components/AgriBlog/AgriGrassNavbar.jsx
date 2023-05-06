@@ -26,7 +26,7 @@ export default function AgriGrassNavbar() {
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          NAVBAR - Grass - Agri
+          LAAIF
         </Typography>
         <div className="ml-auto">
           <Button

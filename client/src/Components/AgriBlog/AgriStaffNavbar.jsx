@@ -17,7 +17,7 @@ export default function AgriStaffNavbar() {
 
   const handleAddNew = () => {
     navigate("/agriForm");
-  }
+  };
 
   const handleLogoutClick = () => {
     navigate("/landingGrassroot");
@@ -26,7 +26,7 @@ export default function AgriStaffNavbar() {
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          NAVBAR - Staff - Agri
+          LAAIF
         </Typography>
         <div className="ml-auto">
           <Button
@@ -50,7 +50,3 @@ export default function AgriStaffNavbar() {
     </AppBar>
   );
 }
-
-
-
-

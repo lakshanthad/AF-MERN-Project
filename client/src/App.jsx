@@ -48,7 +48,6 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Animal />}></Route>
-        <Route path="/beef" element={<Beef />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
@@ -109,24 +108,16 @@ export default function App() {
         ></Route>
         <Route path="/agriArticle" element={<AgriBlog />} />
         <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
-        <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /></>} />
+        <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /><SelectionPage/></>} />
 
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
-        <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /></>}></Route>
+        <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /><SelectionPage/></>}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
         <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
         <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
         <Route path="/" element={<Animal />}></Route>
-        <Route
-          path="/beef"
-          element={
-            <>
-              {" "}
-              <Beef /> <APNavbar /> <Footer />
-            </>
-          }
-        ></Route>
+
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route

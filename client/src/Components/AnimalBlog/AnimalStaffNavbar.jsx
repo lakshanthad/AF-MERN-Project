@@ -17,7 +17,7 @@ export default function AnimalStaffNavbar() {
 
   const handleAddNew = () => {
     navigate("/addanimalblog");
-  }
+  };
 
   const handleLogoutClick = () => {
     navigate("/landingStaff");
@@ -26,7 +26,7 @@ export default function AnimalStaffNavbar() {
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          NAVBAR - Staff - Animal
+          LAAIF
         </Typography>
         <div className="ml-auto">
           <Button

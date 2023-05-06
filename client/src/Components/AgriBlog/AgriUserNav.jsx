@@ -19,15 +19,10 @@ export default function AgriUserNav() {
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          NAVBAR - User - Agri
+          LAAIF
         </Typography>
-        <div className="ml-auto">
-        </div>
+        <div className="ml-auto"></div>
       </Toolbar>
     </AppBar>
   );
 }
-
-
-
-
