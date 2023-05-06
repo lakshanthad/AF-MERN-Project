@@ -2,13 +2,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import AnimalBlogLogin from "./Components/AnimalBlog/AnimalBlogLogin";
-import TestImageForm from "./Components/AnimalBlog/TestImageForm";
-import ImageGrid from "./Components/AnimalBlog/ImageGrid";
+import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
+import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
+import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
+import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
 
 import Animal from "./Components/AnimalProduction/Animal";
-import Beef from './Components/AnimalProduction/Beef';
-import Test from './Components/AnimalProduction/Test';
+import Beef from "./Components/AnimalProduction/Beef";
+import Test from "./Components/AnimalProduction/Test";
 import Milk from "./Components/AnimalProduction/Milk";
 import Egg from "./Components/AnimalProduction/Egg";
 import Pork from "./Components/AnimalProduction/Pork";
@@ -21,6 +23,7 @@ import Footer from "./Components/Footer";
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
+import NavLandingGrass from "./Components/NavLandingStaff";
 
 import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
@@ -37,8 +40,6 @@ import AgriBlog from "./Components/AgriBlog/AgriBlog";
 import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
 import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
 import NavLandingGrass from "./Components/NavLandingStaff";
-
-
 
 export default function App() {
   return (
@@ -107,30 +108,174 @@ export default function App() {
         <Route path="/agriArticle" element={<AgriBlog />} />
         <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
         <Route path="/agriUser" element={<ImageGridAgriUser />} />
-      
+
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
-        <Route path="/testimage" element={<TestImageForm />}></Route>
-        <Route path="/allimages" element={<ImageGrid />}></Route>
+        <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
+        <Route path="/allanimblogs" element={<AllAnimalBlogs />}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
-
-        <Route path="/" element={<Animal/>}></Route>
-        <Route path="/beef" element={<> <Beef/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/test" element={<Test/>}></Route>
+        <Route path="/allBlogStaff" element={<AllBlogsStaff />}></Route>
+        <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
+        <Route path="/" element={<Animal />}></Route>
+        <Route
+          path="/beef"
+          element={
+            <>
+              {" "}
+              <Beef /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
-        <Route path="/milk" element={<> <Milk/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/egg" element={<> <Egg/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/pork" element={<> <Pork/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/chicken" element={<> <Chicken/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/goatmilk" element={<> <GoatMilk/> <APNavbar/> <Footer/></>}></Route>
-        <Route path="/goat" element={<> <Goat/> <APNavbar/> <Footer/></>}></Route>
+        <Route
+          path="/milk"
+          element={
+            <>
+              {" "}
+              <Milk /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingStaff"
+          element={
+            <>
+              {" "}
+              <NavLandingStaff /> <LandingPageStaff />{" "}
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingGrassroot"
+          element={
+            <>
+              {" "}
+              <LandingPageGrassroot />{" "}
+            </>
+          }
+        ></Route>
+        <Route path="/selectionPage" element={<SelectionPage />}></Route>
+        <Route
+          path="/AnimalDataTable"
+          element={
+            <>
+              {" "}
+              <AnimalGrassNavbar /> <AnimalDataTable />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/agriTable"
+          element={
+            <>
+              <AgriGrassNavbar /> <AgriDataTable />
+            </>
+          }
+        />
 
+        <Route path="/" element={<Animal />}></Route>
+        <Route
+          path="/beef"
+          element={
+            <>
+              {" "}
+              <Beef /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route path="/test" element={<Test />}></Route>
+        <Route path="/animal" element={<Animal />}></Route>
+        <Route
+          path="/milk"
+          element={
+            <>
+              {" "}
+              <Milk /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/egg"
+          element={
+            <>
+              {" "}
+              <Egg /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/pork"
+          element={
+            <>
+              {" "}
+              <Pork /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/chicken"
+          element={
+            <>
+              {" "}
+              <Chicken /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/goatmilk"
+          element={
+            <>
+              {" "}
+              <GoatMilk /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/goat"
+          element={
+            <>
+              {" "}
+              <Goat /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
 
-        <Route path="/landingStaff" element={ <> <NavLandingStaff/> <LandingPageStaff />  </> }></Route>
-        <Route path="/landingGrassroot" element={ <> <LandingPageGrassroot />  </>}></Route>
-        <Route path="/selectionPage" element={<SelectionPage/>}></Route>
-        <Route path="/AnimalDataTable" element={<>  <AnimalGrassNavbar/> <AnimalDataTable/> </>}/>
-        <Route path="/agriTable" element={<><AgriGrassNavbar/> <AgriDataTable/></>}/>
-       
+        <Route
+          path="/landingStaff"
+          element={
+            <>
+              {" "}
+              <NavLandingStaff /> <LandingPageStaff />{" "}
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingGrassroot"
+          element={
+            <>
+              {" "}
+              <LandingPageGrassroot />{" "}
+            </>
+          }
+        ></Route>
+        <Route path="/selectionPage" element={<SelectionPage />}></Route>
+        <Route
+          path="/AnimalDataTable"
+          element={
+            <>
+              {" "}
+              <AnimalGrassNavbar /> <AnimalDataTable />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/agriTable"
+          element={
+            <>
+              <AgriGrassNavbar /> <AgriDataTable />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
