@@ -48,7 +48,7 @@ export default function LandingPageGrassroot() {
                   <TextField
                     fullWidth
                     variant="outlined"
-                    label="Email address"
+                    label="Username"
                     InputProps={{
                       startAdornment: (
                         <Email style={{ color: "#1a8b1f" }} />

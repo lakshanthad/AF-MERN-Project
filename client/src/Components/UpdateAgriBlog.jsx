@@ -1,72 +1,56 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
 
-const UpdateAgriBlog = ({
-  id,
-  title,
-  articlebody,
-  image,
-  handleUpdate,
-  handleCancel,
-}) => {
-  const [newTitle, setNewTitle] = useState(title);
-  const [newArticleBody, setNewArticleBody] = useState(articlebody);
-  const [newImage, setNewImage] = useState(image);
+export default function UpdateAgriBlog() {
+  const [ID, setID] = useState("");
+  const [title, setTitle] = useState("");
+  const [articleBody, setArticleBody] = useState("");
+  const [image, setImage] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const formData = new FormData();
-      formData.append("title", newTitle);
-      formData.append("articlebody", newArticleBody);
-      if (newImage) {
-        formData.append("image", newImage);
-      }
-      const response = await axios.put(
-        `http://localhost:8070/agriBlog/images/${id}`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      handleUpdate(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+  const sendDataToUpdate = () => {
+    axios.put(`http://localhost:8070/agriBlog/images` + ID, {
+      title,
+      articleBody,
+      image,
+    });
   };
 
-  const handleImageChange = (e) => {
-    setNewImage(e.target.files[0]);
-  };
-
-  const buttonStyle = {
-    backgroundColor: "green",
-    marginRight: "10px",
-  };
+  useEffect(() => {
+    setID(localStorage.getItem("ID"));
+    setTitle(localStorage.getItem("title"));
+    setArticleBody(localStorage.getItem("articleBody"));
+    setImage(localStorage.getItem("image"));
+  }, []);
 
   return (
     <form onSubmit={handleSubmit}>
       <TextField
         label="Title"
-        value={newTitle}
-        onChange={(e) => setNewTitle(e.target.value)}
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
         variant="outlined"
         fullWidth
         margin="normal"
       />
       <TextField
         label="Article Body"
-        value={newArticleBody}
-        onChange={(e) => setNewArticleBody(e.target.value)}
+        value={articleBody}
+        onChange={(e) => setArticleBody(e.target.value)}
         variant="outlined"
         fullWidth
         margin="normal"
         multiline
         rows={10}
+      />
+      <TextField
+        label="Image"
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+        variant="outlined"
+        fullWidth
+        margin="normal"
       />
       <input type="file" accept="image/*" onChange={handleImageChange} />
       <Button
@@ -87,6 +71,4 @@ const UpdateAgriBlog = ({
       </Button>
     </form>
   );
-};
-
-export default UpdateAgriBlog;
+}

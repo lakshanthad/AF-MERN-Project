@@ -8,6 +8,7 @@ require ("dotenv").config();
 const PORT = process.env.PORT || 8070;
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.json());
 //connect database
 const URL = process.env.MONGODB_URL;
 mongoose.connect(URL, ()=>{
@@ -26,3 +27,6 @@ app.use("/agriBlog", agriBlogRouter);
 app.listen(PORT,()=>{
     console.log(`Server is up and running on port number: ${PORT} !`);
 })
+
+const grass = require ('./Routes/Grass-route');
+app.use('/grass', grass);

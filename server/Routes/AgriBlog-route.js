@@ -50,7 +50,7 @@ router.get("/images", async (req, res) => {
   }
 });
 
-//delete
+//delete a record
 router.delete("/images/:id", async (req, res) => {
   try {
     const image = await Image.findById(req.params.id);
@@ -65,6 +65,33 @@ router.delete("/images/:id", async (req, res) => {
     await Image.findByIdAndDelete(req.params.id);
 
     res.json({ message: "Image removed" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+});
+
+//update a record
+router.put("/images/:id", upload.single("image"), async (req, res) => {
+  try {
+    const { title, articlebody } = req.body;
+    const image = await Image.findById(req.params.id);
+
+    if (!image) {
+      return res.status(404).json({ error: "Image not found" });
+    }
+
+    if (req.file) {
+      // If a new image is uploaded, remove the old one and save the new one
+      fs.unlinkSync(`../client/public${image.image}`);
+      image.image = `/Assets/agriBlogs/${req.file.filename}`;
+    }
+
+    image.title = title;
+    image.articlebody = articlebody;
+    await image.save();
+
+    res.json({ message: "Image updated", image });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
