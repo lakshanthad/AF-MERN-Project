@@ -58,9 +58,13 @@ app.use("/porkProduction", porkProductionRouter);
 const chickenProductionRouter = require ("./Routes/ChickenProduction-route");
 app.use("/chickenProduction", chickenProductionRouter);
 
-//Milk production routes.
+//Goat milk production routes.
 const goatMilkProductionRouter = require ("./Routes/GoatMilkProduction-route");
 app.use("/goatMilkProduction", goatMilkProductionRouter);
+
+//Goat meat production routes.
+const goatMeatProductionRouter = require ("./Routes/GoatMeatProduction-route");
+app.use("/goatMeatProduction", goatMeatProductionRouter);
 
 app.listen(PORT,()=>{
     console.log(`Server is up and running on port number: ${PORT} !`);
