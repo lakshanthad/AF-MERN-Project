@@ -1,9 +1,7 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import AnimalBlogLogin from "./Components/AnimalBlog/AnimalBlogLogin";
-import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
-import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
+
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
 import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
 import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
@@ -42,6 +40,7 @@ import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
 import NavLandingGrass from "./Components/NavLandingGrass";
 import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
 import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
+import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 
 export default function App() {
   return (
@@ -110,8 +109,7 @@ export default function App() {
         <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
         <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /><SelectionPage/></>} />
 
-        <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
-        <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
+     
         <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /><SelectionPage/></>}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
         <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
