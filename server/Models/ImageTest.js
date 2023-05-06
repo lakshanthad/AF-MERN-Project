@@ -2,21 +2,21 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const animalBlogSchema = new Schema({
-  Title: {
+const imageSchema = new Schema({
+  title: {
     type: String,
     required: true,
   },
-  Description: {
+  articlebody: {
     type: String,
     required: true,
   },
-  Thumbnail: {
+  image: {
     type: String,
     required: true,
   },
 });
 
-const AnimalBlog = mongoose.model("AnimalBlog", animalBlogSchema);
+const Image = mongoose.model("ImageTest", imageSchema);
 
-module.exports = AnimalBlog;
+module.exports = Image;

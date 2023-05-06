@@ -46,7 +46,7 @@ exports.getAgriById = async (req, res) => {
 };
 
 //update agri blog
-const updateAgriBlog = async (re, res, next) => {
+const updateAgriBlog = async (req, res, next) => {
   let agriBlogId = req.params.id;
   const { Title, Description, Thumbnail } = req.body;
   const updateAgriBlog = {

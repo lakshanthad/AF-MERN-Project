@@ -1,92 +1,44 @@
 // this is just a sample code to fill up the component
 
 import { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
+// import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+  root: {
+    flexGrow: 1,
   },
-  input: {
-    margin: theme.spacing(1),
-    width: "300px",
+  title: {
+    flexGrow: 1,
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
   },
 }));
 
-const AutocompleteExample = () => {
+export default function Navbar() {
   const classes = useStyles();
 
-  const [region, setRegion] = useState("");
-  const [division, setDivision] = useState("");
-
-  const regions = [
-    { label: "Rathnapura", value: "Rathnapura" },
-    { label: "Kegalle", value: "Kegalle" },
-  ];
-
-  const divisionsByRegion = {
-    Rathnapura: [
-      { label: "Ratnapura Division 1", value: "Ratnapura Division 1" },
-      { label: "Ratnapura Division 2", value: "Ratnapura Division 2" },
-    ],
-    Kegalle: [
-      { label: "Kegalle Division 1", value: "Kegalle Division 1" },
-      { label: "Kegalle Division 2", value: "Kegalle Division 2" },
-    ],
-  };
-
-  const handleRegionChange = (event, newValue) => {
-    setRegion(newValue);
-    setDivision("");
-  };
-
-  const divisions = region
-    ? divisionsByRegion[region]
-    : [];
-
   return (
-    <div className={classes.container}>
-      <Autocomplete
-        disablePortal
-        id="region-autocomplete"
-        options={regions}
-        getOptionLabel={(option) => option.label}
-        value={region}
-        onChange={handleRegionChange}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            className={classes.input}
-            label="Region"
-            variant="outlined"
-          />
-        )}
-      />
-      <Autocomplete
-        disablePortal
-        id="division-autocomplete"
-        options={divisions}
-        getOptionLabel={(option) => option.label}
-        value={division}
-        onChange={(event, newValue) => {
-          setDivision(newValue);
-        }}
-        renderInput={(params) => (
-          <TextField
-            {...params}
-            className={classes.input}
-            label="Division"
-            variant="outlined"
-          />
-        )}
-        disabled={!region}
-      />
+    <div className={classes.root}>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" className={classes.title}>
+            Land page
+          </Typography>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">About</Button>
+          <Button color="inherit">Contact</Button>
+        </Toolbar>
+      </AppBar>
     </div>
   );
-};
+}
 
-export default AutocompleteExample;
+

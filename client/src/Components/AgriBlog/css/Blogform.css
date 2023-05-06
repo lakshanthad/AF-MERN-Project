@@ -5,3 +5,16 @@
     width: 50%;
     margin: auto;
 }
+
+.formTopic{
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.blogimage{
+    width:100%;
+    height: auto;
+}

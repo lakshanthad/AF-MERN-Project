@@ -1,221 +1,167 @@
-import React from 'react';
-import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
-import FilledInput from '@material-ui/core/FilledInput';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableFooter from '@mui/material/TableFooter';
+import TablePagination from '@mui/material/TablePagination';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+import IconButton from '@mui/material/IconButton';
+import FirstPageIcon from '@mui/icons-material/FirstPage';
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import LastPageIcon from '@mui/icons-material/LastPage';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  withoutLabel: {
-    marginTop: theme.spacing(3),
-  },
-  textField: {
-    width: '25ch',
-  },
-}));
+function TablePaginationActions(props) {
+  const theme = useTheme();
+  const { count, page, rowsPerPage, onPageChange } = props;
 
-export default function InputAdornments() {
-  const classes = useStyles();
-  const [values, setValues] = React.useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+  const handleFirstPageButtonClick = (event) => {
+    onPageChange(event, 0);
   };
 
-  const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
+  const handleBackButtonClick = (event) => {
+    onPageChange(event, page - 1);
   };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
+  const handleNextButtonClick = (event) => {
+    onPageChange(event, page + 1);
+  };
+
+  const handleLastPageButtonClick = (event) => {
+    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
   };
 
   return (
-    <div className={classes.root}>
-      <div>
-        <TextField
-          label="With normal TextField"
-          id="standard-start-adornment"
-          className={clsx(classes.margin, classes.textField)}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-          }}
-        />
-        <FormControl className={clsx(classes.margin, classes.withoutLabel, classes.textField)}>
-          <Input
-            id="standard-adornment-weight"
-            value={values.weight}
-            onChange={handleChange('weight')}
-            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-            aria-describedby="standard-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-          />
-          <FormHelperText id="standard-weight-helper-text">Weight</FormHelperText>
-        </FormControl>
-        <FormControl className={clsx(classes.margin, classes.textField)}>
-          <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-          <Input
-            id="standard-adornment-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-        <FormControl fullWidth className={classes.margin}>
-          <InputLabel htmlFor="standard-adornment-amount">Amount</InputLabel>
-          <Input
-            id="standard-adornment-amount"
-            value={values.amount}
-            onChange={handleChange('amount')}
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          />
-        </FormControl>
-      </div>
-      <div>
-        <TextField
-          label="With normal TextField"
-          id="filled-start-adornment"
-          className={clsx(classes.margin, classes.textField)}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-          }}
-          variant="filled"
-        />
-        <FormControl className={clsx(classes.margin, classes.textField)} variant="filled">
-          <FilledInput
-            id="filled-adornment-weight"
-            value={values.weight}
-            onChange={handleChange('weight')}
-            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-            aria-describedby="filled-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-          />
-          <FormHelperText id="filled-weight-helper-text">Weight</FormHelperText>
-        </FormControl>
-        <FormControl className={clsx(classes.margin, classes.textField)} variant="filled">
-          <InputLabel htmlFor="filled-adornment-password">Password</InputLabel>
-          <FilledInput
-            id="filled-adornment-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-          />
-        </FormControl>
-        <FormControl fullWidth className={classes.margin} variant="filled">
-          <InputLabel htmlFor="filled-adornment-amount">Amount</InputLabel>
-          <FilledInput
-            id="filled-adornment-amount"
-            value={values.amount}
-            onChange={handleChange('amount')}
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-          />
-        </FormControl>
-      </div>
-      <div>
-        <TextField
-          label="With normal TextField"
-          id="outlined-start-adornment"
-          className={clsx(classes.margin, classes.textField)}
-          InputProps={{
-            startAdornment: <InputAdornment position="start">Kg</InputAdornment>,
-          }}
-          variant="outlined"
-        />
-        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <OutlinedInput
-            id="outlined-adornment-weight"
-            value={values.weight}
-            onChange={handleChange('weight')}
-            endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-            aria-describedby="outlined-weight-helper-text"
-            inputProps={{
-              'aria-label': 'weight',
-            }}
-            labelWidth={0}
-          />
-          <FormHelperText id="outlined-weight-helper-text">Weight</FormHelperText>
-        </FormControl>
-        <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={values.showPassword ? 'text' : 'password'}
-            value={values.password}
-            onChange={handleChange('password')}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
-                </IconButton>
-              </InputAdornment>
-            }
-            labelWidth={70}
-          />
-        </FormControl>
-        <FormControl fullWidth className={classes.margin} variant="outlined">
-          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-amount"
-            value={values.amount}
-            onChange={handleChange('amount')}
-            startAdornment={<InputAdornment position="start">$</InputAdornment>}
-            labelWidth={60}
-          />
-        </FormControl>
-      </div>
-    </div>
+    <Box sx={{ flexShrink: 0, ml: 2.5 }}>
+      <IconButton
+        onClick={handleFirstPageButtonClick}
+        disabled={page === 0}
+        aria-label="first page"
+      >
+        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+      </IconButton>
+      <IconButton
+        onClick={handleBackButtonClick}
+        disabled={page === 0}
+        aria-label="previous page"
+      >
+        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+      </IconButton>
+      <IconButton
+        onClick={handleNextButtonClick}
+        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        aria-label="next page"
+      >
+        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+      </IconButton>
+      <IconButton
+        onClick={handleLastPageButtonClick}
+        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        aria-label="last page"
+      >
+        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+      </IconButton>
+    </Box>
+  );
+}
+
+TablePaginationActions.propTypes = {
+  count: PropTypes.number.isRequired,
+  onPageChange: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  rowsPerPage: PropTypes.number.isRequired,
+};
+
+function createData(name, calories, fat) {
+  return { name, calories, fat };
+}
+
+const rows = [
+  createData('Cupcake', 305, 3.7),
+  createData('Donut', 452, 25.0),
+  createData('Eclair', 262, 16.0),
+  createData('Frozen yoghurt', 159, 6.0),
+  createData('Gingerbread', 356, 16.0),
+  createData('Honeycomb', 408, 3.2),
+  createData('Ice cream sandwich', 237, 9.0),
+  createData('Jelly Bean', 375, 0.0),
+  createData('KitKat', 518, 26.0),
+  createData('Lollipop', 392, 0.2),
+  createData('Marshmallow', 318, 0),
+  createData('Nougat', 360, 19.0),
+  createData('Oreo', 437, 18.0),
+].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+
+export default function CustomPaginationActionsTable() {
+  const [page, setPage] = React.useState(0);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+
+  // Avoid a layout jump when reaching the last page with empty rows.
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
+  return (
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+        <TableBody>
+          {(rowsPerPage > 0
+            ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+            : rows
+          ).map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell style={{ width: 160 }} align="right">
+                {row.calories}
+              </TableCell>
+              <TableCell style={{ width: 160 }} align="right">
+                {row.fat}
+              </TableCell>
+            </TableRow>
+          ))}
+
+          {emptyRows > 0 && (
+            <TableRow style={{ height: 53 * emptyRows }}>
+              <TableCell colSpan={6} />
+            </TableRow>
+          )}
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <TablePagination
+              rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+              colSpan={3}
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              SelectProps={{
+                inputProps: {
+                  'aria-label': 'rows per page',
+                },
+                native: true,
+              }}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+              ActionsComponent={TablePaginationActions}
+            />
+          </TableRow>
+        </TableFooter>
+      </Table>
+    </TableContainer>
   );
 }
