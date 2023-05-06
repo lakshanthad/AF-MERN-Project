@@ -7,7 +7,7 @@ import "./css/Blogform.css";
 import {
   Dialog,
   DialogActions,
-  DialogContent,
+  DialogContent, 
   DialogContentText,
   DialogTitle,
 } from "@material-ui/core";
