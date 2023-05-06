@@ -40,7 +40,7 @@ import AgriBlog from "./Components/AgriBlog/AgriBlog";
 import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
 import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
 import NavLandingGrass from "./Components/NavLandingGrass";
-
+import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
 export default function App() {
   return (
     <Router>
@@ -107,7 +107,7 @@ export default function App() {
         ></Route>
         <Route path="/agriArticle" element={<AgriBlog />} />
         <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
-        <Route path="/agriUser" element={<ImageGridAgriUser />} />
+        <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /></>} />
 
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
