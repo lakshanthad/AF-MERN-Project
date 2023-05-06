@@ -1,5 +1,6 @@
-// import React from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "@material-ui/core/Button";
+
 export default function SelectionPage() {
   const navigate = useNavigate();
 
@@ -14,10 +15,10 @@ export default function SelectionPage() {
   return (
     <div>
       <center>
-        <Button variant="primary" onClick={handleAnimalClick}>
+        <Button variant="contained" color="primary" onClick={handleAnimalClick}>
           Animal
         </Button>{" "}
-        <Button variant="primary" onClick={handleAgriClick}>
+        <Button variant="contained" color="primary" onClick={handleAgriClick}>
           Agriculture
         </Button>
       </center>

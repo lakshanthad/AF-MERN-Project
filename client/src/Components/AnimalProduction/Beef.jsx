@@ -10,7 +10,7 @@ import './AnimalProduction.css';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1a8b1f', // Set your desired primary color here
+      main: "#1a8b1f", // Set your desired primary color here
     },
   },
 });
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   input: {
     margin: theme.spacing(1),
-    width: '50%',
+    width: "50%",
   },
   button: {
     margin: theme.spacing(3),
@@ -33,12 +33,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   root: {
-    display: 'flex',
+    display: "flex",
     margin: theme.spacing(1.5),
     gap: theme.spacing(3),
-    alignItems: 'center',
+    alignItems: "center",
   },
-
 }));
 
 export default function Beef() {
@@ -168,6 +167,32 @@ export default function Beef() {
     />
     </div>
 
+        <TextField
+          className={classes.input}
+          label="Population"
+          variant="outlined"
+          name="species" // name from the animal object
+          value={animal.species}
+          onChange={handleChange}
+        />
+        <TextField
+          className={classes.input}
+          label="Consuption per person"
+          endAdornment={<InputAdornment position="end">kg</InputAdornment>}
+          variant="outlined"
+          name="age"
+          value={animal.age}
+          onChange={handleChange}
+        />
+        <TextField
+          className={classes.input}
+          label="Consumption per year"
+          variant="outlined"
+          color="primary"
+          name="habitat"
+          value={animal.habitat}
+          onChange={handleChange}
+        />
 
       <TextField
         className={classes.input}

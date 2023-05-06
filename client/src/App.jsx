@@ -1,7 +1,6 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-
 import AnimalBlogLogin from "./Components/AnimalBlog/AnimalBlogLogin";
 import TestImageForm from "./Components/AnimalBlog/TestImageForm";
 import ImageGrid from "./Components/AnimalBlog/ImageGrid";
@@ -27,7 +26,16 @@ import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
 import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
-import AgriGrassNavbar from "./Components/AgriGrassNavbar";
+import AgriGrassNavbar from "./Components/AgriBlog/AgriGrassNavbar";
+import AnimalServices from "./Components/AnimalServices";
+import SelectionPageStaff from "./Components/SelectionPageStaff";
+import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
+import AgriStaffNavbar from "./Components/AgriBlog/AgriStaffNavbar";
+import ImageGridAgri from "./Components/AgriBlog/ImageGridAgri";
+import AgriBlogForm from "./Components/AgriBlog/AgriBlogForm";
+import AgriBlog from "./Components/AgriBlog/AgriBlog";
+import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
+import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
 
 
 
@@ -35,6 +43,69 @@ export default function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Animal />}></Route>
+        <Route path="/beef" element={<Beef />}></Route>
+        <Route path="/test" element={<Test />}></Route>
+        <Route path="/animal" element={<Animal />}></Route>
+        <Route
+          path="/landingStaff"
+          element={
+            <>
+              {" "}
+              <NavLandingStaff /> <LandingPageStaff />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingGrassroot"
+          element={
+            <>
+              {" "}
+              <NavLandingGrass /> <LandingPageGrassroot />{" "}
+            </>
+          }
+        ></Route>
+        <Route path="/selectionPage" element={<SelectionPage />}></Route>
+        <Route
+          path="/AnimalDataTable"
+          element={
+            <>
+              {" "}
+              <AnimalGrassNavbar /> <AnimalDataTable />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/agriTable"
+          element={
+            <>
+              <AgriGrassNavbar /> <AgriDataTable />
+            </>
+          }
+        />
+        <Route
+          path="/animalServices"
+          element={
+            <>
+              <AnimalStaffNavbar />
+              <AnimalServices />
+            </>
+          }
+        />
+        <Route path="/selectionStaff" element={<SelectionPageStaff />} />
+        <Route path="/agriForm" element={<AgriBlogForm />} />
+        <Route
+          path="/agriServices"
+          element={
+            <>
+              <AgriStaffNavbar />
+              <ImageGridAgri /> <SelectionPageStaff />{" "}
+            </>
+          }
+        ></Route>
+        <Route path="/agriArticle" element={<AgriBlog />} />
+        <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
+        <Route path="/agriUser" element={<ImageGridAgriUser />} />
       
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
         <Route path="/testimage" element={<TestImageForm />}></Route>
