@@ -105,7 +105,7 @@ export default function UpdateBlog() {
         <br />
         <br />
         <br />
-        <div className="buttons">
+        <div className="buttons" style={{ display: "flex", gap: "1rem" }}>
           <Button
             type="submit"
             variant="contained"
@@ -118,6 +118,7 @@ export default function UpdateBlog() {
           <Button
             variant="contained"
             color="secondary"
+            size="large"
             className="delete-button"
             onClick={handleDeleteClick}
           >
