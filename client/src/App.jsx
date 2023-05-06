@@ -23,7 +23,7 @@ import Footer from "./Components/Footer";
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
-import NavLandingGrass from "./Components/NavLandingStaff";
+
 
 import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
@@ -32,14 +32,14 @@ import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriBlog/AgriGrassNavbar";
 import AnimalServices from "./Components/AnimalServices";
 import SelectionPageStaff from "./Components/SelectionPageStaff";
-import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
+import AnimalStaffNavbar from "./Components/AnimalBlog/AnimalStaffNavbar";
 import AgriStaffNavbar from "./Components/AgriBlog/AgriStaffNavbar";
 import ImageGridAgri from "./Components/AgriBlog/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlog/AgriBlogForm";
 import AgriBlog from "./Components/AgriBlog/AgriBlog";
 import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
 import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
-import NavLandingGrass from "./Components/NavLandingStaff";
+import NavLandingGrass from "./Components/NavLandingGrass";
 
 export default function App() {
   return (
@@ -86,7 +86,7 @@ export default function App() {
           }
         />
         <Route
-          path="/animalServices"
+          path="/animalServices"ImageGridAgri
           element={
             <>
               <AnimalStaffNavbar />
@@ -113,7 +113,7 @@ export default function App() {
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
         <Route path="/allanimblogs" element={<AllAnimalBlogs />}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
-        <Route path="/allBlogStaff" element={<AllBlogsStaff />}></Route>
+        <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
         <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
         <Route path="/" element={<Animal />}></Route>
         <Route
