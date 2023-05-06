@@ -72,15 +72,13 @@ router.route("/update/:id").put(async (req, res) => {
 
   const { title } = req.body;
   const { articlebody } = req.body;
-  const { filename: imageName } = req.body;
-
-  const imagePath = `Assets/animalblogs/${imageName}`;
+  const { image } = req.body;
 
   //save file pat to MongoDB
   const updateArticle = {
     title,
     articlebody,
-    image: imagePath,
+    image,
   };
 
   const update = await AnimalArticle.findByIdAndUpdate(articleId, updateArticle)
