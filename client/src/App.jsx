@@ -41,6 +41,8 @@ import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
 import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
 import NavLandingGrass from "./Components/NavLandingGrass";
 import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
+import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
+
 export default function App() {
   return (
     <Router>
@@ -111,7 +113,7 @@ export default function App() {
 
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
-        <Route path="/allanimblogs" element={<AllAnimalBlogs />}></Route>
+        <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /></>}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
         <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
         <Route path="/blogUpdate" element={<UpdateBlog />}></Route>

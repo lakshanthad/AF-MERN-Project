@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
 }));
-export default function AgriUserNav() {
+export default function AnimalUserNav() {
   const classes = useStyles();
   const navigate = useNavigate();
 
@@ -27,7 +27,3 @@ export default function AgriUserNav() {
     </AppBar>
   );
 }
-
-
-
-
