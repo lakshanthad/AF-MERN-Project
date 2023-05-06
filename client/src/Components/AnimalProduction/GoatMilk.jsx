@@ -165,7 +165,7 @@ export default function GoatMilk() {
 
       <TextField
         className={classes.input}
-        label="Chicken production per year ( per poultry )"
+        label="Goat milk production ( Per year )"
         variant="outlined"
         color='primary'
         name="habitat"

@@ -1,5 +1,5 @@
 const goatMilkProductionRouter = require("express").Router();
-const goatMilkProductionController = require("../Controllers/GoatMilkProduction-controller");
+const goatMilkProductionController = require("../../Controllers/AnimalPControllers/GoatMilkProduction-controller");
 
 goatMilkProductionRouter.post("/addGoatMilkProduction", goatMilkProductionController.addGoatMilkProduction);
 goatMilkProductionRouter.get("/getGoatMilkProduction", goatMilkProductionController.getAllGoatMilkProduction);

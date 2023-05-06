@@ -4,67 +4,42 @@ const schema = mongoose.Schema;
 
 const goatMilkProductionSchema = new schema({
     
-    Population: {
-        type: String,
-        required: true
-    },
-
-    District: {
-        type: String,
-        required: true
-    },
-
-    SecretariatDivision: {
-        type: String,
-        required: true
-    },
-
-    NeedPerPerson: {
-        type: String,
-        required: true
-    },
-
-    Consuption: {
-        type: String,
-        required: true
-    },
-
-    NeedPerDivision: {
-        type: String,
-        required: true
-    },
-
-    NeedPerYearInMl: {
-        type: String,
-        required: true
-    },
-
-    Production: {
-        type: String,
-        required: true
-    },
-
-    SurplusOrDeficit: {
+    Region: {
         type: String,
         required: true
     },
     
-    GoatsPresent: {
-        type: String,
-        required: true
-    },
-    
-    AvgGoatMilkProductionPerYear: {
+    Division: {
         type: String,
         required: true
     },
 
-    GoatsToIncreaseProduction: {
+    GPopulation: {  // G = goat
         type: String,
         required: true
     },
 
-    Year: {
+    NeedPP: { // pp = per person
+        type: String,
+        required: true
+    },
+
+    ConsuptionPY: { // py = per year
+        type: String,
+        required: true
+    },
+
+    SurplusDeficit: { // of goat milk
+        type: String,
+        required: true
+    },
+
+    GMProPY: { // GMProPY = goat milk production per year
+        type: String,
+        required: true
+    },
+
+    productionValue: { // amount of goats to increase production
         type: String,
         required: true
     },

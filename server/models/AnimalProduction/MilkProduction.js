@@ -4,72 +4,42 @@ const schema = mongoose.Schema;
 
 const milkProductionSchema = new schema({
     
-    Population: {
+    Region: {
+        type: String,
+        required: true
+    },
+    
+    Division: {
         type: String,
         required: true
     },
 
-    District: {
+    CPopulation: {  // C = cattle
         type: String,
         required: true
     },
 
-    SecretariatDivision: {
+    NeedPP: { // pp = per person
         type: String,
         required: true
     },
 
-    NeedPerPerson: {
+    ConsuptionPY: { // py = per year
         type: String,
         required: true
     },
 
-    Consuption: {
+    SurplusDeficit: { // of milk
         type: String,
         required: true
     },
 
-    NeedPerDay: {
+    MilkProPY: { // MilkProPY = milk production per year
         type: String,
         required: true
     },
 
-    NeedPerYearInMl: {
-        type: String,
-        required: true
-    },
-
-    Production: {
-        type: String,
-        required: true
-    },
-
-    SurplusOrDeficit: {
-        type: String,
-        required: true
-    },
-
-    AvgWeightOfCow: {
-        type: String,
-        required: true
-    },
-
-    AvgMilkProductionPerYear: {
-        type: String,
-        required: true
-    },
-
-    CowsPresent: {
-        type: String,
-        required: true
-    },
-
-    CowsToIncreaseProduction: {
-        type: String,
-        required: true
-    },
-
-    Year: {
+    productionValue: { // amount of cattle to increase production
         type: String,
         required: true
     },

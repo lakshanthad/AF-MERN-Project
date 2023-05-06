@@ -1,5 +1,5 @@
 const milkProductionRouter = require("express").Router();
-const milkProductionController = require("../Controllers/MilkProduction-controller");
+const milkProductionController = require("../../Controllers/AnimalPControllers/MilkProduction-controller");
 
 milkProductionRouter.post("/addMilkProduction", milkProductionController.addMilkProduction);
 milkProductionRouter.get("/getMilkProduction", milkProductionController.getAllMilkProduction);

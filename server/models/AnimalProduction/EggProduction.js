@@ -3,72 +3,42 @@ const schema = mongoose.Schema;
 
 const eggProductionSchema = new schema({
     
-    Population: {
+    Region: {
         type: String,
         required: true
     },
     
-    District: {
+    Division: {
         type: String,
         required: true
     },
 
-    SecretariatDivision: {
+    EPopulation: {  // E = egg
         type: String,
         required: true
     },
 
-    NeedPerPerson: {
+    NeedPP: { // pp = per person
         type: String,
         required: true
     },
 
-    Consuption: {
+    ConsuptionPY: { // py = per year
         type: String,
         required: true
     },
 
-    NeedAsPerDivision: {
+    SurplusDeficit: { // of egg
         type: String,
         required: true
     },
 
-    NeedPerYear: {
+    EggProPY: { // ProPY = production per year
         type: String,
         required: true
     },
 
-    Production: {
-        type: String,
-        required: true
-    },
-
-    SurplusOrDeficit: {
-        type: String,
-        required: true
-    },
-
-    DomesticChickens: {
-        type: String,
-        required: true
-    },
-
-    HensPresent: {
-        type: String,
-        required: true
-    },
-
-    AnnualProductonOfAHen: {
-        type: String,
-        required: true
-    },    
-
-    HensToIncreaseProduction: {
-        type: String,
-        required: true
-    },
-
-    Year: {
+    productionValue: { // amount of egg to increase production
         type: String,
         required: true
     },

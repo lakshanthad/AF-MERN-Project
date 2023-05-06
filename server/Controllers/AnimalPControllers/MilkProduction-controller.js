@@ -1,4 +1,4 @@
-const MilkProduction = require("../Models/MilkProduction");
+const MilkProduction = require("../../Models/AnimalProduction/MilkProduction");
 
 
 //this controller is used to add a new milk production.
