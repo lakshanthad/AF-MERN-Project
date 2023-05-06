@@ -34,9 +34,6 @@ app.use("/grass", grass);
 
 const staff = require("./Routes/Staff-route");
 app.use("/staff", staff);
-connection.once("open", () => {
-  console.log("MongoDB connection success !!");
-});
 
 //AgriBlog Routes
 const agriBlogRouter = require("./Routes/AgriBlog-route");
@@ -70,9 +67,6 @@ app.use("/goatMilkProduction", goatMilkProductionRouter);
 const goatMeatProductionRouter = require("./Routes/Animal-routes/GoatMeatProduction-route");
 app.use("/goatMeatProduction", goatMeatProductionRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is up and running on port number: ${PORT} !`);
-});
 //Test Image
 const imageRouter = require("./Routes/ImageTest-route");
 app.use("/imageTest", imageRouter);
@@ -81,6 +75,3 @@ app.use("/imageTest", imageRouter);
 const agricultureRouter = require("./Routes/AgricultureProducion-route");
 app.use("/agricultureProduction", agricultureRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is up and running on port number: ${PORT} !`);
-});
