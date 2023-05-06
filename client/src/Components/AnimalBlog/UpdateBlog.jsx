@@ -5,6 +5,8 @@ import { Input, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./css/Blogform.css";
 
+import { useNavigate } from "react-router-dom";
+
 const useStyles = makeStyles({
   textField: {
     "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
@@ -15,6 +17,7 @@ const useStyles = makeStyles({
 
 export default function UpdateBlog() {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [articlebody, setArticlebody] = useState("");
@@ -44,6 +47,7 @@ export default function UpdateBlog() {
       articlebody,
       image,
     });
+    navigate("/allBlogstaff");
   };
 
   return (
