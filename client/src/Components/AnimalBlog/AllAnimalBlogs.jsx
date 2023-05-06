@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import "./css/ImageGrid.css";
+// import "../ImageGrid.css";
 
 export default function AllAnimalBlogs() {
   const [animblogs, setAnimblogs] = useState([]);
