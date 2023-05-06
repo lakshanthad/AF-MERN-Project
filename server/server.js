@@ -6,31 +6,29 @@ const dotenv = require("dotenv");
 const app = express();
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8091;
-
-
-
+const PORT = process.env.PORT || 8070;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("../client/src/Assets/images"));
 app.use(express.static("../client/src/Assets/animalblogs"));
 
+app.listen(PORT, () => {
+  console.log(`Server is up and running on port number: ${PORT} !`);
+});
+
 //connect database
 const URL = process.env.MONGODB_URL;
 
-mongoose.connect(URL, () => {
-  useNewUrlParser: true;
-  useCreateIndex: true;
-  useUnifiedTopology: true;
-  useFindAndModify: false;
-});
 
-const connection = mongoose.connection;
-
-connection.once("open", () => {
-  console.log("MongoDB connection success !!");
-});
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to database!');
+    // add your code here
+  })
+  .catch((err) => {
+    console.error('Failed to connect to database', err);
+  });
 
 //AgriBlog Routes
 const agriBlogRouter = require("./Routes/AgriBlog-route");
@@ -64,9 +62,7 @@ app.use("/goatMilkProduction", goatMilkProductionRouter);
 const goatMeatProductionRouter = require ("./Routes/Animal-routes/GoatMeatProduction-route");
 app.use("/goatMeatProduction", goatMeatProductionRouter);
 
-app.listen(PORT,()=>{
-    console.log(`Server is up and running on port number: ${PORT} !`);
-})
+
 //Test Image
 const imageRouter = require("./Routes/ImageTest-route");
 app.use("/imageTest", imageRouter);
@@ -75,6 +71,4 @@ app.use("/imageTest", imageRouter);
 const agricultureRouter =require("./Routes/AgricultureProducion-route");
 app.use("/agricultureProduction", agricultureRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is up and running on port number: ${PORT} !`);
-});
+
