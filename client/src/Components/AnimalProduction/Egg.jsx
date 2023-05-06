@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Beef() {
+export default function Egg() {
   const classes = useStyles();
   const [animal, setAnimal] = useState({
     name: '',
@@ -108,7 +108,7 @@ export default function Beef() {
       
     <form className={classes.form} onSubmit={handleSubmit}>
     
-    <h1 className='h1'>Cattle Details</h1>
+    <h1 className='h1'>Egg Production Details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
@@ -129,7 +129,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Population"
+        label="Poultry population"
         variant="outlined"
         name="species" // name from the animal object
         value={animal.species}
@@ -165,7 +165,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Avg weight of cows"
+        label="Egg production per year ( per poultry )"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -175,7 +175,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Amount of cows to increase production"
+        label="Amount of poultry to increase production"
         variant="outlined"
         color='primary'
         name="habitat"
