@@ -5,6 +5,8 @@ import AnimalBlogLogin from "./Components/AnimalBlog/AnimalBlogLogin";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
+import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
+import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
 
 import Animal from "./Components/AnimalProduction/Animal";
 import Beef from "./Components/AnimalProduction/Beef";
@@ -31,6 +33,8 @@ export default function App() {
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
         <Route path="/allanimblogs" element={<AllAnimalBlogs />}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
+        <Route path="/allBlogStaff" element={<AllBlogsStaff />}></Route>
+        <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
         <Route path="/" element={<Animal />}></Route>
         <Route
           path="/beef"
