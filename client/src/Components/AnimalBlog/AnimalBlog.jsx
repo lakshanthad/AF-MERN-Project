@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 // import { useParams } from "react-router-dom";
 // import axios from "axios";
-
 // the commented statement are not used uncomment them if you want to use them
 const AnimalBlog = () => {
   const [title, setTitle] = useState("");
