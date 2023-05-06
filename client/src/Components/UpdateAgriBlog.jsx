@@ -78,7 +78,7 @@ export default function UpdateAgriBlog() {
     <div className="animalblogform">
       <p className="formTopic">
         <center>
-          <h2>Edit Agriculture Blog</h2>
+          <h2>Edit Blog</h2>
         </center>
       </p>
       <form>
