@@ -5,7 +5,7 @@ import { Input, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom"; // import the useNavigate hook
-import "../Components/css/Blogform.css";
+import "./css/Blogform.css";
 
 const useStyles = makeStyles({
   textField: {

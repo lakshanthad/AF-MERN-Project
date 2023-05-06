@@ -51,8 +51,8 @@ const AgriBlog = () => {
       <h2 className="article-title">{title}</h2>
       <img className="blogimage" src={image} />
       <p className="articlebody">{articlebody}</p>
-
-      {isUpdateOpen && <UpdateAgriBlog />} {/* render UpdateAgriBlog when isUpdateOpen is true */}
+      {isUpdateOpen && <UpdateAgriBlog />}{" "}
+      {/* render UpdateAgriBlog when isUpdateOpen is true */}
     </div>
   );
 };
