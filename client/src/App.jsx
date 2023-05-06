@@ -2,12 +2,12 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 
-import AnimalBlogLogin from "./Components/AnimalBlogLogin";
+import AnimalBlogLogin from "./Components/AnimalBlog/AnimalBlogLogin";
 import TestImageForm from "./Components/AnimalBlog/TestImageForm";
 import ImageGrid from "./Components/AnimalBlog/ImageGrid";
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
 
-import Animal from "./Components/Animal";
+import Animal from "./Components/AnimalProduction/Animal";
 import Beef from './Components/AnimalProduction/Beef';
 import Test from './Components/AnimalProduction/Test';
 import Milk from "./Components/AnimalProduction/Milk";
