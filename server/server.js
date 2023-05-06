@@ -37,6 +37,10 @@ app.use("/agriBlog", agriBlogRouter);
 const imageRouter = require("./Routes/ImageTest-route");
 app.use("/imageTest", imageRouter);
 
+//Agriculture production routes.
+const agricultureRouter =require("./Routes/AgricultureProducion-route");
+app.use("/agricultureProduction", agricultureRouter);
+
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT} !`);
 });
