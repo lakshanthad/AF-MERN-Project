@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import TextField from "@mui/material/TextField";
-import { Input, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./css/Blogform.css";
-
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles({
@@ -21,10 +27,9 @@ export default function UpdateBlog() {
 
   const [title, setTitle] = useState("");
   const [articlebody, setArticlebody] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
   const [ID, setID] = useState(null);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
 
   useEffect(() => {
     setTitle(localStorage.getItem("title"));
@@ -41,6 +46,13 @@ export default function UpdateBlog() {
     setArticlebody(event.target.value);
   };
 
+  const handleDeleteClick = () => {
+    setIsDeleteDialogOpen(true);
+  };
+  const handleDeleteCancel = () => {
+    setIsDeleteDialogOpen(false);
+  };
+
   const handleSubmit = () => {
     axios.put("http://localhost:8070/imageTest/update/" + ID, {
       title,
@@ -50,10 +62,23 @@ export default function UpdateBlog() {
     navigate("/allBlogstaff");
   };
 
+  const handleDeleteConfirm = () => {
+    axios
+      .delete(`http://localhost:8070/imageTest/delete/${ID}`)
+      .then(() => {
+        console.log("Deleted");
+        navigate("/allBlogstaff");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    setIsDeleteDialogOpen(false);
+  };
+
   return (
     <div className="animalblogform">
       <p className="formTopic">Add Animal Blog</p>
-      <form onSubmit={handleSubmit}>
+      <form>
         <img src={image} style={{ width: "100%", height: "auto" }} />
         <br />
         <br />
@@ -67,7 +92,6 @@ export default function UpdateBlog() {
         <br />
         <br />
         <br />
-
         <TextField
           id="outlined-multiline-static"
           label="Article Body"
@@ -81,16 +105,41 @@ export default function UpdateBlog() {
         <br />
         <br />
         <br />
-
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          style={{ backgroundColor: "green", color: "white", width: "20%" }}
-        >
-          Update
-        </Button>
-        {error && <p>{error}</p>}
+        <div className="buttons">
+          <Button
+            type="submit"
+            variant="contained"
+            size="large"
+            style={{ backgroundColor: "green", color: "white", width: "20%" }}
+            onClick={handleSubmit}
+          >
+            Update
+          </Button>
+          <Button
+            variant="contained"
+            color="secondary"
+            className="delete-button"
+            onClick={handleDeleteClick}
+          >
+            Delete
+          </Button>
+        </div>
+        <Dialog open={isDeleteDialogOpen} onClose={handleDeleteCancel}>
+          <DialogTitle>
+            {"Are you sure you want to delete this post?"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText>This action cannot be undone.</DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleDeleteCancel} color="primary">
+              Cancel
+            </Button>
+            <Button onClick={handleDeleteConfirm} color="secondary" autoFocus>
+              Delete
+            </Button>
+          </DialogActions>
+        </Dialog>
       </form>
     </div>
   );
