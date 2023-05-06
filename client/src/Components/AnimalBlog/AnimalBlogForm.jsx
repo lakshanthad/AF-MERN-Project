@@ -4,11 +4,7 @@ import { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Input, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-<<<<<<< HEAD:client/src/Components/AnimalBlog/AnimalBlogForm.jsx
 import "./css/Blogform.css";
-=======
-// import "../Blogform.css";
->>>>>>> 2e1ac9e89c5dfb9c4f8c3e0d18992f79799d50f3:client/src/Components/AnimalBlog/TestImageForm.jsx
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
