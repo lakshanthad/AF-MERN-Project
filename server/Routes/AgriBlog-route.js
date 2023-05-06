@@ -23,7 +23,6 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     const { articlebody } = req.body;
     const { filename: imageName } = req.file;
     const imagePath = `/Assets/agriBlogs/${imageName}`;
-    
     // Save file path to MongoDB
     const image = await Image.create({
       title,
@@ -33,7 +32,7 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     res.json(image);
   } catch (error) {
     console.error(error);
-    
+
     // Delete uploaded file if there is an error
     fs.unlinkSync(req.file.path);
     res.status(500).json({ error: "Server error" });
@@ -51,19 +50,21 @@ router.get("/images", async (req, res) => {
   }
 });
 
-// Delete a record
-router.delete("/delete/:id", async (req, res) => {
+//delete
+router.delete("/images/:id", async (req, res) => {
   try {
-    const { id } = req.params;
+    const image = await Image.findById(req.params.id);
+    if (!image) {
+      return res.status(404).json({ error: "Image not found" });
+    }
 
-    // Find the record in the database and delete it
-    const image = await Image.findByIdAndDelete(id);
+    // Remove image from file system
+    fs.unlinkSync(`../client/public${image.image}`);
 
-    // Delete the image file from the server
-    const imagePath = `../client/public${image.image}`;
-    fs.unlinkSync(imagePath);
+    // Remove image from MongoDB
+    await Image.findByIdAndDelete(req.params.id);
 
-    res.json({ message: "Record deleted" });
+    res.json({ message: "Image removed" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Server error" });
@@ -71,4 +72,3 @@ router.delete("/delete/:id", async (req, res) => {
 });
 
 module.exports = router;
-

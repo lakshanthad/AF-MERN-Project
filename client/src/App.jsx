@@ -20,6 +20,7 @@ import AgriStaffNavbar from "./Components/AgriStaffNavbar";
 import ImageGridAgri from "./Components/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlogForm";
 import AgriBlog from "./Components/AgriBlog";
+import UpdateAgriBlog from "./Components/UpdateAgriBlog";
 
 
 export default function App() {
@@ -38,8 +39,9 @@ export default function App() {
         <Route path="/animalServices" element={<><AnimalStaffNavbar/><AnimalServices/></>}/>
         <Route path="/selectionStaff" element={<SelectionPageStaff/>}/>
         <Route path="/agriForm" element={<AgriBlogForm/>}/>
-        <Route path="/agriServices" element={<><AgriStaffNavbar/><ImageGridAgri /></>}></Route>
+        <Route path="/agriServices" element={<><AgriStaffNavbar/><ImageGridAgri />  <SelectionPageStaff/> </>}></Route>
         <Route path="/agriArticle" element={<AgriBlog/>}/>
+        <Route path="/updateAgriBlog" element={<UpdateAgriBlog/>}/>
       
       </Routes>
     </Router>

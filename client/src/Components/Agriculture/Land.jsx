@@ -1,8 +1,5 @@
 // this is just a sample code to fill up the component
 
-
-
-
 import { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Autocomplete from "@mui/material/Autocomplete";
