@@ -1,42 +1,28 @@
-const BeefProduction = require("../Models/BeefProduction");
+const BeefProduction = require("../../models/AnimalProduction/BeefProduction");
 
 
 //this controller is used to add a new beef production.
 const addBeefProduction = async (req, res, next) => {
     const { 
-        Population,
-        District,
-        SecretariatDivision,
-        NeedPerPerson, 
-        Consuption,
-        NeedPerDay,
-        NeedPerYearInKg,
-        NeedPerYearInTons,
-        Production,
-        SurplusOrDeficit,
-        AvgWeightOfCow,
-        MeatPercentageFromWeight,
-        CowsPresent,
-        CowsToIncreaseProduction,
-        Year
+        Region,
+        Division,
+        PPopulation,
+        NeedPP,
+        ConsuptionPY,
+        SurplusDeficit,
+        AvgPWeight,
+        productionValue
     } = req.body;
 
     const newBeefProduction = new BeefProduction({
-        Population,
-        District,
-        SecretariatDivision,
-        NeedPerPerson, 
-        Consuption,
-        NeedPerDay,
-        NeedPerYearInKg,
-        NeedPerYearInTons,
-        Production,
-        SurplusOrDeficit,
-        AvgWeightOfCow,
-        MeatPercentageFromWeight,
-        CowsPresent,
-        CowsToIncreaseProduction,
-        Year,
+        Region,
+        Division,
+        PPopulation,
+        NeedPP,
+        ConsuptionPY,
+        SurplusDeficit,
+        AvgPWeight,
+        productionValue
     });
 
     newBeefProduction.save().then(() => {
@@ -75,39 +61,25 @@ const updateBeefProduction = async (req, res, next) => {
     let beefProductionID = req.params.id;
 
     const { 
-        Population,
-        District,
-        SecretariatDivision, 
-        NeedPerPerson, 
-        Consuption,
-        NeedPerDay,
-        NeedPerYearInKg,
-        NeedPerYearInTons,
-        Production,
-        SurplusOrDeficit,
-        AvgWeightOfCow,
-        MeatPercentageFromWeight,
-        CowsPresent,
-        CowsToIncreaseProduction,
-        Year
+        Region,
+        Division,
+        PPopulation,
+        NeedPP,
+        ConsuptionPY,
+        SurplusDeficit,
+        AvgPWeight,
+        productionValue
     } = req.body;
 
     const updateBeefProduction = {
-        Population,
-        District,
-        SecretariatDivision, 
-        NeedPerPerson, 
-        Consuption,
-        NeedPerDay,
-        NeedPerYearInKg,
-        NeedPerYearInTons,
-        Production,
-        SurplusOrDeficit,
-        AvgWeightOfCow,
-        MeatPercentageFromWeight,
-        CowsPresent,
-        CowsToIncreaseProduction,
-        Year,
+        Region,
+        Division,
+        PPopulation,
+        NeedPP,
+        ConsuptionPY,
+        SurplusDeficit,
+        AvgPWeight,
+        productionValue
     };
 
     const updateProduction = await BeefProduction.findOneAndUpdate(beefProductionID, updateBeefProduction).then(() => {

@@ -1,5 +1,5 @@
 const chickenProductionRouter = require("express").Router();
-const chickenProductionController = require("../Controllers/ChickenProduction-controller");
+const chickenProductionController = require("../../Controllers/AnimalPControllers/ChickenProduction-controller");
 
 chickenProductionRouter.post("/addChickenProduction", chickenProductionController.addChickenProduction);
 chickenProductionRouter.get("/getChickenProduction", chickenProductionController.getAllChickenProduction);

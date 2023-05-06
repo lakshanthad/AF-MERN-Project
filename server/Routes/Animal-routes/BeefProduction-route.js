@@ -1,5 +1,5 @@
 const beefProductionRouter = require("express").Router();
-const beefProductionController = require("../Controllers/BeefProduction-controller");
+const beefProductionController = require("../../Controllers/AnimalPControllers/BeefProduction-controller");
 
 beefProductionRouter.post("/addBeefProduction", beefProductionController.addBeefProduction);
 beefProductionRouter.get("/getBeefProduction", beefProductionController.getAllBeefProduction);

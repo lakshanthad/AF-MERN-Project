@@ -1,5 +1,5 @@
 const eggProductionRouter = require("express").Router();
-const eggProductionController = require("../Controllers/EggProduction-controller");
+const eggProductionController = require("../../Controllers/AnimalPControllers/EggProduction-controller");
 
 eggProductionRouter.post("/addEggProduction", eggProductionController.addEggProduction);
 eggProductionRouter.get("/getEggProduction", eggProductionController.getAllEggProduction);
