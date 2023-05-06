@@ -43,7 +43,7 @@ export default function AllAnimalBlogs() {
               )
             }
           >
-            <Link to={`/animalArticle`}>
+            <Link to={`/animalArticle`} style={{ textDecoration: "none" }}>
               <img src={animblog.image} alt={animblog.title} />
               <h2>{animblog.title}</h2>
             </Link>
