@@ -23,7 +23,7 @@ import Footer from "./Components/Footer";
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
-import NavLandingGrass from "./Components/NavLandingStaff";
+
 
 import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
@@ -32,21 +32,22 @@ import AnimalGrassNavbar from "./Components/AnimalGrassNavbar";
 import AgriGrassNavbar from "./Components/AgriBlog/AgriGrassNavbar";
 import AnimalServices from "./Components/AnimalServices";
 import SelectionPageStaff from "./Components/SelectionPageStaff";
-import AnimalStaffNavbar from "./Components/AnimalStaffNavbar";
+import AnimalStaffNavbar from "./Components/AnimalBlog/AnimalStaffNavbar";
 import AgriStaffNavbar from "./Components/AgriBlog/AgriStaffNavbar";
 import ImageGridAgri from "./Components/AgriBlog/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlog/AgriBlogForm";
 import AgriBlog from "./Components/AgriBlog/AgriBlog";
 import UpdateAgriBlog from "./Components/AgriBlog/UpdateAgriBlog";
 import ImageGridAgriUser from "./Components/AgriBlog/ImageGridAgriUser";
-import NavLandingGrass from "./Components/NavLandingStaff";
+import NavLandingGrass from "./Components/NavLandingGrass";
+import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
+import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 
 export default function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Animal />}></Route>
-        <Route path="/beef" element={<Beef />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
@@ -86,7 +87,7 @@ export default function App() {
           }
         />
         <Route
-          path="/animalServices"
+          path="/animalServices"ImageGridAgri
           element={
             <>
               <AnimalStaffNavbar />
@@ -107,24 +108,16 @@ export default function App() {
         ></Route>
         <Route path="/agriArticle" element={<AgriBlog />} />
         <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
-        <Route path="/agriUser" element={<ImageGridAgriUser />} />
+        <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /><SelectionPage/></>} />
 
         <Route path="/animallogin" element={<AnimalBlogLogin />}></Route>
         <Route path="/addanimalblog" element={<AnimalBlogForm />}></Route>
-        <Route path="/allanimblogs" element={<AllAnimalBlogs />}></Route>
+        <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /><SelectionPage/></>}></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
-        <Route path="/allBlogStaff" element={<AllBlogsStaff />}></Route>
+        <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
         <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
         <Route path="/" element={<Animal />}></Route>
-        <Route
-          path="/beef"
-          element={
-            <>
-              {" "}
-              <Beef /> <APNavbar /> <Footer />
-            </>
-          }
-        ></Route>
+
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route

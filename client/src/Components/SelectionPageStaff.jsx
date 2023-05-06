@@ -25,7 +25,7 @@ export default function SelectionPageStaff() {
   const navigate = useNavigate();
 
   const handleAnimalClick = () => {
-    navigate("/animalServices");
+    navigate("/allBlogStaff");
   };
 
   const handleAgriClick = () => {

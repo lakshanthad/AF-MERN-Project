@@ -41,7 +41,7 @@ export default function ImageGridAgriUser() {
               )
             }
           >
-            <Link to={`/agriArticle`}>
+            <Link to={`/agriArticle`} style={{ textDecoration: "none" }}>
               <img src={animblog.image} alt={animblog.title} />
               <h2>{animblog.title}</h2>
             </Link>
