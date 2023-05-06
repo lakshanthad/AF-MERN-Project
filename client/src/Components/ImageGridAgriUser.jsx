@@ -3,7 +3,7 @@ import axios from "axios";
 import "./css/ImageGrid.css";
 import { Link } from "react-router-dom";
 
-export default function ImageGridAgri() {
+export default function ImageGridAgriUser() {
   const [agriblogs, setAgriblogs] = useState([]);
 
   const setID = (_id, title, articlebody, image) => {
@@ -41,7 +41,7 @@ export default function ImageGridAgri() {
               )
             }
           >
-            <Link to={`/agriArticleEdit`}>
+            <Link to={`/agriArticle`}>
               <img src={animblog.image} alt={animblog.title} />
               <h2>{animblog.title}</h2>
             </Link>

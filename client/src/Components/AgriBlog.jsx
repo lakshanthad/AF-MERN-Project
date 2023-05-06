@@ -51,40 +51,7 @@ const AgriBlog = () => {
       <h2 className="article-title">{title}</h2>
       <img className="blogimage" src={image} />
       <p className="articlebody">{articlebody}</p>
-      <div className="buttons">
-        <Button
-          variant="contained"
-          color="primary"
-          className="delete-button"
-          onClick={handleUpdateClick}
-        >
-          Update
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          className="delete-button"
-          onClick={handleDeleteClick}
-        >
-          Delete
-        </Button>
-      </div>
-      <Dialog open={isDeleteDialogOpen} onClose={handleDeleteCancel}>
-        <DialogTitle>
-          {"Are you sure you want to delete this post?"}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText>This action cannot be undone.</DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleDeleteCancel} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleDeleteConfirm} color="secondary" autoFocus>
-            Delete
-          </Button>
-        </DialogActions>
-      </Dialog>
+
       {isUpdateOpen && <UpdateAgriBlog />} {/* render UpdateAgriBlog when isUpdateOpen is true */}
     </div>
   );

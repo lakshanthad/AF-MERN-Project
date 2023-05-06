@@ -21,6 +21,7 @@ import ImageGridAgri from "./Components/ImageGridAgri";
 import AgriBlogForm from "./Components/AgriBlogForm";
 import AgriBlog from "./Components/AgriBlog";
 import UpdateAgriBlog from "./Components/UpdateAgriBlog";
+import ImageGridAgriUser from "./Components/ImageGridAgriUser";
 
 
 export default function App() {
@@ -41,7 +42,8 @@ export default function App() {
         <Route path="/agriForm" element={<AgriBlogForm/>}/>
         <Route path="/agriServices" element={<><AgriStaffNavbar/><ImageGridAgri />  <SelectionPageStaff/> </>}></Route>
         <Route path="/agriArticle" element={<AgriBlog/>}/>
-        <Route path="/updateAgriBlog" element={<UpdateAgriBlog/>}/>
+        <Route path="/agriArticleEdit" element={<UpdateAgriBlog/>}/>
+        <Route path ="/agriUser" element={<ImageGridAgriUser/>}/>
       
       </Routes>
     </Router>
