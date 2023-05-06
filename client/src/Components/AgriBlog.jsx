@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./css/Blog.css";
 import UpdateAgriBlog from "./UpdateAgriBlog";
-import { Button } from "@material-ui/core";
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@material-ui/core";
 import axios from "axios";
-import { confirmAlert } from "react-confirm-alert";
 
 const AgriBlog = () => {
   const [id, setID] = useState("");
@@ -12,6 +11,9 @@ const AgriBlog = () => {
   const [articlebody, setArticlebody] = useState("");
   const [image, setImage] = useState("");
   const [isEditMode, setIsEditMode] = useState(false);
+  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
+  const navigate = useNavigate();
+  
   useEffect(() => {
     setTitle(localStorage.getItem("title"));
     setArticlebody(localStorage.getItem("articlebody"));
@@ -22,25 +24,37 @@ const AgriBlog = () => {
   const handleEditClick = () => {
     setIsEditMode(true);
   };
+  
   const handleUpdate = (newTitle, newArticleBody, newImage) => {
     setTitle(newTitle);
     setArticlebody(newArticleBody);
     setImage(newImage);
     setIsEditMode(false);
   };
+  
   const handleCancel = () => {
     setIsEditMode(false);
   };
-  const handleDelete = () => {
+  
+  const handleDeleteClick = () => {
+    setIsDeleteDialogOpen(true);
+  };
+  
+  const handleDeleteConfirm = () => {
     axios
-      .delete(`http://localhost:8070/images/${id}`)
+      .delete(`http://localhost:8070/agriBlog/images/${id}`)
       .then(() => {
         console.log("Deleted");
+        navigate("/agriServices");
       })
       .catch((error) => {
         console.error(error);
       });
-    console.log("delete function called");
+    setIsDeleteDialogOpen(false);
+  };
+  
+  const handleDeleteCancel = () => {
+    setIsDeleteDialogOpen(false);
   };
 
   return (
@@ -71,11 +85,30 @@ const AgriBlog = () => {
               variant="contained"
               color="secondary"
               className="delete-button"
-              onClick={handleDelete}
+              onClick={handleDeleteClick}
             >
               Delete
             </Button>
           </div>
+          <Dialog
+            open={isDeleteDialogOpen}
+            onClose={handleDeleteCancel}
+          >
+            <DialogTitle>{"Are you sure you want to delete this post?"}</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                This action cannot be undone.
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleDeleteCancel} color="primary">
+                Cancel
+              </Button>
+              <Button onClick={handleDeleteConfirm} color="secondary" autoFocus>
+                Delete
+              </Button>
+            </DialogActions>
+          </Dialog>
         </>
       )}
     </div>
