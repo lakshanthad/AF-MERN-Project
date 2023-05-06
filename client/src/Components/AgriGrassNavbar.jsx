@@ -19,6 +19,9 @@ export default function AgriGrassNavbar() {
   const handleMenuClick = () => {
     navigate("/selectionPage");
   };
+  const handleLogoutClick = () => {
+    navigate("/landingGrassroot");
+  };
   return (
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
       <Toolbar>
@@ -41,6 +44,14 @@ export default function AgriGrassNavbar() {
             onClick={handleMenuClick}
           >
             Menu
+          </Button>
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.button}
+            onClick={handleLogoutClick}
+          >
+            Log out
           </Button>
         </div>
       </Toolbar>

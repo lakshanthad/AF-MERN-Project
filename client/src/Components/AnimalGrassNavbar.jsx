@@ -22,6 +22,9 @@ export default function AnimalGrassNavbar() {
   const handleMenuClick = () => {
     navigate("/selectionPage");
   };
+  const handleLogoutClick = () => {
+    navigate("/landingStaff");
+  };
 
   return (
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
@@ -45,6 +48,14 @@ export default function AnimalGrassNavbar() {
             className={classes.button}
           >
             Menu
+          </Button>
+          <Button
+            variant="outlined"
+            color="inherit"
+            className={classes.button}
+            onClick={handleLogoutClick}
+          >
+            Log out
           </Button>
         </div>
       </Toolbar>
