@@ -156,7 +156,15 @@ export default function App() {
             </>
           }
         ></Route>
-        <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
+        <Route
+          path="/blogUpdate"
+          element={
+            <>
+              <UpdateBlog />
+              <Footer />
+            </>
+          }
+        ></Route>
         <Route path="/" element={<Animal />}></Route>
 
         <Route path="/test" element={<Test />}></Route>
