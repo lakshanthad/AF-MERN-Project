@@ -5,7 +5,7 @@ import { createTheme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Autocomplete from '@mui/material/Autocomplete';
-import './AnimalProduction.css';
+import '../../Components/AnimalProduction/AnimalProduction.css';
 
 const theme = createTheme({
   palette: {
@@ -47,7 +47,6 @@ export default function Beef() {
   const [Region, setRegion] = useState("");
   const [Division, setDivision] = useState("");
   const [CPopulation, setCPopulation] = useState("");
-  const [NeedPP, setNeedPP] = useState("");
   const [ConsuptionPY, setConsuptionPY] = useState("");
   const [SurplusDeficit, setSurplusDeficit] = useState("");
   const [AvgCWeight, setAvgCWeight] = useState("");
@@ -60,7 +59,6 @@ export default function Beef() {
       Region,
       Division,
       CPopulation,
-      NeedPP,
       ConsuptionPY,
       SurplusDeficit,
       AvgCWeight,
@@ -125,7 +123,7 @@ export default function Beef() {
       
     <form className={classes.form} onSubmit={sendData}>
     
-    <h1 className='h1'>Cattle Details</h1>
+    <h1 className='h1'>Agriculture details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
@@ -151,7 +149,7 @@ export default function Beef() {
 
         <TextField
           className={classes.input}
-          label="Population"
+          label="Rice Type"
           variant="outlined"
           name="species" // name from the animal object
           onChange={(e) => {
@@ -160,16 +158,7 @@ export default function Beef() {
         />
         <TextField
           className={classes.input}
-          label="Consuption per person"
-          variant="outlined"
-          name="age"
-          onChange={(e) => {
-            setNeedPP(e.target.value);
-          }}
-        />
-        <TextField
-          className={classes.input}
-          label="Consumption per year"
+          label="Season"
           variant="outlined"
           color="primary"
           name="habitat"
@@ -180,7 +169,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Surplus / Deficit"
+        label="Cultivated Land Area"
         variant="outlined"
         name="Cattle Population" // name from the animal object
         onChange={(e) => {
@@ -191,7 +180,7 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Avg weight of cows"
+        label="Harvest"
         variant="outlined"
         color='primary'
         name="habitat"
@@ -202,7 +191,19 @@ export default function Beef() {
 
       <TextField
         className={classes.input}
-        label="Amount of cows to increase production"
+        label="Surplus / Deficit"
+        variant="outlined"
+        color='primary'
+        name="habitat"
+        onChange={(e) => {
+          setAvgCWeight(e.target.value);
+        }}
+      />
+
+
+      <TextField
+        className={classes.input}
+        label="Year"
         variant="outlined"
         color='primary'
         name="habitat"

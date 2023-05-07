@@ -125,7 +125,7 @@ export default function Beef() {
       
     <form className={classes.form} onSubmit={sendData}>
     
-    <h1 className='h1'>Cattle Details</h1>
+    <h1 className='h1'>Update Cattle Details</h1>
     <div className={classes.root}>
     <Autocomplete
       disablePortal
