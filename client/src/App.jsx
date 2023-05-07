@@ -95,7 +95,7 @@ export default function App() {
           }
         />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
-        <Route path="/agriForm" element={<AgriBlogForm />} />
+        <Route path="/agriForm" element={<><AgriBlogForm /><Footer/></>} />
         <Route
           path="/agriServices"
           element={
@@ -194,9 +194,9 @@ export default function App() {
           path="/landingStaff"
           element={
             <>
-              {" "}
+              
               <NavLandingStaff /> <LandingPageStaff />
-              <Footer />{" "}
+              <Footer />
             </>
           }
         ></Route>
