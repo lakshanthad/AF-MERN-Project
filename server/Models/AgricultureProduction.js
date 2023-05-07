@@ -9,12 +9,7 @@ const agricultureProductionSchema = new schema({
         required: true
     },
 
-    SecretariatDivision: {
-        type: String,
-        required: true
-    },
-
-    OfficerID: {
+    Division: {
         type: String,
         required: true
     },
