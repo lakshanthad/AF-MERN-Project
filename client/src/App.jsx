@@ -39,6 +39,7 @@ import NavLandingGrass from "./Components/NavLandingGrass";
 import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
 import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
+import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
 export default function App() {
   return (
@@ -132,6 +133,17 @@ export default function App() {
             </>
           }
         />
+        <Route
+          path="/addanimalblog"
+          element={
+            <>
+              <AnimalUserNav />
+              <AnimalBlogForm />
+              <SelectionPage />
+              <Footer />
+            </>
+          }
+        ></Route>
 
         <Route
           path="/allanimblogs"
