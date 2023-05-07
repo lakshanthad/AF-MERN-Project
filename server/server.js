@@ -28,9 +28,11 @@ app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT} !`);
 });
 
+//LoginGrassroot login routes
 const grass = require("./Routes/Grass-route");
 app.use("/grass", grass);
 
+//LoginAdmin login routes
 const staff = require("./Routes/Staff-route");
 app.use("/staff", staff);
 

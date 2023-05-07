@@ -1,7 +1,6 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
 import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
 import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
@@ -25,7 +24,6 @@ import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
 
-
 import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
@@ -44,6 +42,7 @@ import NavLandingGrass from "./Components/NavLandingGrass";
 import AgriUserNav from "./Components/AgriBlog/AgriUserNav";
 import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
+import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
 export default function App() {
   return (
@@ -90,7 +89,8 @@ export default function App() {
           }
         />
         <Route
-          path="/animalServices"ImageGridAgri
+          path="/animalServices"
+          ImageGridAgri
           element={
             <>
               <AnimalStaffNavbar />
@@ -99,25 +99,88 @@ export default function App() {
           }
         />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
-        <Route path="/agriForm" element={<AgriBlogForm />} />
+        <Route path="/agriForm" element={<><AgriBlogForm /><Footer/></>} />
         <Route
           path="/agriServices"
           element={
             <>
               <AgriStaffNavbar />
-              <ImageGridAgri /> <SelectionPageStaff />{" "}
+              <ImageGridAgri /> <SelectionPageStaff />
+              <Footer />{" "}
             </>
           }
         ></Route>
-        <Route path="/agriArticle" element={<AgriBlog />} />
-        <Route path="/agriArticleEdit" element={<UpdateAgriBlog />} />
-        <Route path="/agriUser" element={<><AgriUserNav/> <ImageGridAgriUser /><SelectionPage/></>} />
+        <Route
+          path="/agriArticle"
+          element={
+            <>
+              <AgriBlog />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/agriArticleEdit"
+          element={
+            <>
+              <UpdateAgriBlog /> <Footer />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/agriUser"
+          element={
+            <>
+              <AgriUserNav /> <ImageGridAgriUser />
+              <SelectionPage />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/addanimalblog"
+          element={
+            <>
+              <AnimalUserNav />
+              <AnimalBlogForm />
+              <SelectionPage />
+              <Footer />
+            </>
+          }
+        ></Route>
 
-     
-        <Route path="/allanimblogs" element={ <><AnimalUserNav/><AllAnimalBlogs /><SelectionPage/></>}></Route>
+        <Route
+          path="/allanimblogs"
+          element={
+            <>
+              <AnimalUserNav />
+              <AllAnimalBlogs />
+              <SelectionPage />
+              <Footer />
+            </>
+          }
+        ></Route>
         <Route path="/animalArticle" element={<AnimalBlog />}></Route>
-        <Route path="/allBlogStaff" element={<><AnimalStaffNavbar/><AllBlogsStaff /><SelectionPageStaff /></>}></Route>
-        <Route path="/blogUpdate" element={<UpdateBlog />}></Route>
+        <Route
+          path="/allBlogStaff"
+          element={
+            <>
+              <AnimalStaffNavbar />
+              <AllBlogsStaff />
+              <SelectionPageStaff />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/blogUpdate"
+          element={
+            <>
+              <UpdateBlog />
+              <Footer />
+            </>
+          }
+        ></Route>
         <Route path="/" element={<Animal />}></Route>
 
         <Route path="/test" element={<Test />}></Route>
@@ -135,8 +198,9 @@ export default function App() {
           path="/landingStaff"
           element={
             <>
-              {" "}
-              <NavLandingStaff /> <LandingPageStaff />{" "}
+              
+              <NavLandingStaff /> <LandingPageStaff />
+              <Footer />
             </>
           }
         ></Route>
@@ -145,7 +209,7 @@ export default function App() {
           element={
             <>
               {" "}
-              <LandingPageGrassroot />{" "}
+              <LandingPageGrassroot /> <Footer />{" "}
             </>
           }
         ></Route>
@@ -242,7 +306,7 @@ export default function App() {
           element={
             <>
               {" "}
-              <NavLandingStaff /> <LandingPageStaff />{" "}
+              <NavLandingStaff /> <LandingPageStaff /> <Footer />{" "}
             </>
           }
         ></Route>
@@ -251,7 +315,7 @@ export default function App() {
           element={
             <>
               {" "}
-              <LandingPageGrassroot />{" "}
+              <LandingPageGrassroot /> <Footer />{" "}
             </>
           }
         ></Route>
