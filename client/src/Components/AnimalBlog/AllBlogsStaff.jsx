@@ -43,7 +43,7 @@ export default function AllBlogsStaff() {
               )
             }
           >
-            <Link to={`/blogUpdate`}>
+            <Link to={`/blogUpdate`} style={{ textDecoration: "none" }}>
               <img src={animblog.image} alt={animblog.title} />
               <h2>{animblog.title}</h2>
             </Link>

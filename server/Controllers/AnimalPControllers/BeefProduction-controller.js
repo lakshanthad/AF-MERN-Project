@@ -6,22 +6,22 @@ const addBeefProduction = async (req, res, next) => {
     const { 
         Region,
         Division,
-        PPopulation,
+        CPopulation,
         NeedPP,
         ConsuptionPY,
         SurplusDeficit,
-        AvgPWeight,
+        AvgCWeight,
         productionValue
     } = req.body;
 
     const newBeefProduction = new BeefProduction({
         Region,
         Division,
-        PPopulation,
+        CPopulation,
         NeedPP,
         ConsuptionPY,
         SurplusDeficit,
-        AvgPWeight,
+        AvgCWeight,
         productionValue
     });
 
@@ -63,22 +63,22 @@ const updateBeefProduction = async (req, res, next) => {
     const { 
         Region,
         Division,
-        PPopulation,
+        CPopulation,
         NeedPP,
         ConsuptionPY,
         SurplusDeficit,
-        AvgPWeight,
+        AvgCWeight,
         productionValue
     } = req.body;
 
     const updateBeefProduction = {
         Region,
         Division,
-        PPopulation,
+        CPopulation,
         NeedPP,
         ConsuptionPY,
         SurplusDeficit,
-        AvgPWeight,
+        AvgCWeight,
         productionValue
     };
 

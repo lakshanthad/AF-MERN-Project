@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import "./css/Blogform.css";
 // import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom"; 
 
 const useStyles = makeStyles({
   textField: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles({
 
 export default function AnimalBlogForm() {
   const classes = useStyles();
-
+  const navigate = useNavigate(); 
   const [file, setFile] = useState(null);
   const [title, setTitle] = useState("");
   const [articlebody, setarticlebody] = useState("");
@@ -57,6 +58,9 @@ export default function AnimalBlogForm() {
           },
         }
       );
+
+      // Use navigate to redirect to the specified route
+      navigate("/allBlogstaff");
 
       setImage(response.data);
     } catch (error) {

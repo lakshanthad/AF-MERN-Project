@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: "100vh",
+    height: "90vh",
     overflow: "hidden",
   },
   formContainer: {

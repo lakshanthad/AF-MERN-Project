@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import "../ImageGrid.css";
 
 export default function AllAnimalBlogs() {
   const [animblogs, setAnimblogs] = useState([]);
@@ -43,7 +42,7 @@ export default function AllAnimalBlogs() {
               )
             }
           >
-            <Link to={`/animalArticle`}>
+            <Link to={`/animalArticle`} style={{ textDecoration: "none" }}>
               <img src={animblog.image} alt={animblog.title} />
               <h2>{animblog.title}</h2>
             </Link>

@@ -150,14 +150,14 @@ export default function Beef() {
           className={classes.input}
           label="Cattle Population"
           variant="outlined"
-          name="Cattle Population" // name from the animal object
+          name="species" // name from the animal object
           onChange={(e) => {
             setCPopulation(e.target.value);
           }}
         />
         <TextField
           className={classes.input}
-          label="Consumption per person"
+          label="Consuption per person"
           variant="outlined"
           name="age"
           onChange={(e) => {
@@ -177,12 +177,30 @@ export default function Beef() {
 
         <TextField
           className={classes.input}
-          label="Production Surplus / Deficit"
+          label="Cattle Population"
+          variant="outlined"
+          name="Cattle Population" // name from the animal object
+          onChange={(e) => {
+            setSurplusDeficit(e.target.value);
+          }}
+        />
+        <TextField
+          className={classes.input}
+          label="Consumption per person"
+          variant="outlined"
+          name="age"
+          onChange={(e) => {
+            setAvgCWeight(e.target.value);
+          }}
+        />
+        <TextField
+          className={classes.input}
+          label="Consumption per year"
           variant="outlined"
           color="primary"
           name="habitat"
           onChange={(e) => {
-            setSurplusDeficit(e.target.value);
+            setConsuptionPY(e.target.value);
           }}
         />
 
@@ -199,12 +217,12 @@ export default function Beef() {
 
         <TextField
           className={classes.input}
-          label="Amount of cows to increase production"
+          label="Avg weight of cows"
           variant="outlined"
           color="primary"
           name="habitat"
           onChange={(e) => {
-            setPproductionValue(e.target.value);
+            setAvgCWeight(e.target.value);
           }}
         />
 

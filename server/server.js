@@ -14,25 +14,18 @@ const URL = process.env.MONGODB_URL;
 app.use(express.static("../client/src/Assets/images"));
 app.use(express.static("../client/src/Assets/animalblogs"));
 
-// mongoose.connect(URL, () => {
-//   useNewUrlParser: true;
-//   useCreateIndex: true;
-//   useUnifiedTopology: true;
-//   useFindAndModify: false;
-// });
-// const connection = mongoose.connection;
-// connection.once("open", () => {
-//   console.log("MongoDB connection success !!");
-// });
 
-mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to database!');
+    // add your code here
+  })
+  .catch((err) => {
+    console.error('Failed to connect to database', err);
+  });
 
-const db = mongoose.connection;
-db.on("error", (err) => {
-  console.error("MongoDB connection error:", err);
-});
-db.once("connected", () => {
-  console.log("Connected to MongoDB!");
+app.listen(PORT, () => {
+  console.log(`Server is up and running on port number: ${PORT} !`);
 });
 
 //LoginGrassroot login routes
@@ -83,6 +76,3 @@ app.use("/imageTest", imageRouter);
 const agricultureRouter = require("./Routes/AgricultureProducion-route");
 app.use("/agricultureProduction", agricultureRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server is up and running on port number: ${PORT} !`);
-});

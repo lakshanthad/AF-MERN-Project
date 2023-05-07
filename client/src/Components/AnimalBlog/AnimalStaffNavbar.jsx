@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppBar, Toolbar, Button, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+
 const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
@@ -10,17 +11,16 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
 }));
-export default function AgriGrassNavbar() {
+export default function AnimalStaffNavbar() {
   const classes = useStyles();
   const navigate = useNavigate();
+
   const handleAddNew = () => {
-    navigate("/animal");
+    navigate("/addanimalblog");
   };
-  const handleMenuClick = () => {
-    navigate("/selectionPage");
-  };
+
   const handleLogoutClick = () => {
-    navigate("/landingGrassroot");
+    navigate("/landingStaff");
   };
   return (
     <AppBar position="static" style={{ backgroundColor: "#1a8b1f" }}>
@@ -36,14 +36,6 @@ export default function AgriGrassNavbar() {
             onClick={handleAddNew}
           >
             Add New
-          </Button>
-          <Button
-            variant="outlined"
-            color="inherit"
-            className={classes.button}
-            onClick={handleMenuClick}
-          >
-            Menu
           </Button>
           <Button
             variant="outlined"
