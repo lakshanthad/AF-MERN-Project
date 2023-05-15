@@ -216,7 +216,7 @@ export default function Beef() {
         variant="contained"
         color="primary"
         type="submit">
-        Submit
+        Update
       </Button>
     </form>
     </ThemeProvider>
