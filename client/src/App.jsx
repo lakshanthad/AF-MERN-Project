@@ -45,6 +45,7 @@ import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
+import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 
@@ -52,7 +53,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Animal />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
@@ -62,72 +63,15 @@ export default function App() {
         <Route path="/AnimalDataTable" element={<><AnimalGrassNavbar /><AnimalDataTable /></>} />
         <Route path="/agriTable" element={<><AgriGrassNavbar /><AgriDataTable /></>} />
         <Route path="/animalServices" element={<><AnimalStaffNavbar /><AnimalServices /></>} />
-        <Route
-          path="/home"
-          element={
-            <>
-              {" "}
-              <Home />
-              <Footer />
-            </>
-          }
-        ></Route>
-        <Route
-          path="/aboutus"
-          element={
-            <>
-              {" "}
-              <AboutUs />
-              <Footer />
-            </>
-          }
-        ></Route>
-        <Route
-          path="/landingStaff"
-          element={
-            <>
-              {" "}
-              <NavLandingStaff /> <LandingPageStaff />
-            </>
-          }
-        ></Route>
-        <Route
-          path="/landingGrassroot"
-          element={
-            <>
-              {" "}
-              <NavLandingGrass /> <LandingPageGrassroot />{" "}
-            </>
-          }
-        ></Route>
-        <Route path="/selectionPage" element={<SelectionPage />}></Route>
-        <Route
-          path="/AnimalDataTable"
-          element={
-            <>
-              {" "}
-              <AnimalGrassNavbar /> <AnimalDataTable />{" "}
-            </>
-          }
-        />
-        <Route
-          path="/agriTable"
-          element={
-            <>
-              <AgriGrassNavbar /> <AgriDataTable />
-            </>
-          }
-        />
-        <Route
-          path="/animalServices"
-          ImageGridAgri
-          element={
-            <>
-              <AnimalStaffNavbar />
-              <AnimalServices />
-            </>
-          }
-        />
+        <Route path="/home" element={<><Home /><Footer /></>} />
+        <Route path="/aboutus" element={<><AboutUs /><Footer /></>} />
+        <Route path="/landingStaff" element={<><NavLandingStaff /><LandingPageStaff /></>} />
+        <Route path="/landingGrassroot" element={<><NavLandingGrass /><LandingPageGrassroot /></>} />
+        <Route path="/selectionPage" element={<SelectionPage />} />
+        <Route path="/AnimalDataTable" element={<><AnimalGrassNavbar /><AnimalDataTable /></>} />
+        <Route path="/agriTable" element={<><AgriGrassNavbar /><AgriDataTable /></>} />
+        <Route path="/animalServices" element={<><AnimalStaffNavbar /><AnimalServices /></>} />
+        <Route path="/" element={<Animal />} />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
         <Route path="/agriForm" element={<><AgriBlogForm /><Footer /></>} />
         <Route path="/agriServices" element={<><AgriStaffNavbar /><ImageGridAgri /><SelectionPageStaff /><Footer /></>} />
