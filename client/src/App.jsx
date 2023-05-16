@@ -52,7 +52,14 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Animal />}></Route>
-        <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
+        <Route
+          path="/agri"
+          element={
+            <>
+              <Agri /> <APNavbar /> <Footer />
+            </>
+          }
+        ></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
@@ -122,7 +129,15 @@ export default function App() {
           }
         />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
-        <Route path="/agriForm" element={<><AgriBlogForm /><Footer/></>} />
+        <Route
+          path="/agriForm"
+          element={
+            <>
+              <AgriBlogForm />
+              <Footer />
+            </>
+          }
+        />
         <Route
           path="/agriServices"
           element={
@@ -221,7 +236,6 @@ export default function App() {
           path="/landingStaff"
           element={
             <>
-              
               <NavLandingStaff /> <LandingPageStaff />
               <Footer />
             </>
@@ -265,8 +279,22 @@ export default function App() {
             </>
           }
         ></Route>
-        <Route path="/vbeef" element={<><ViewBeef/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/upbeef" element={<><UpdateBeef/> <APNavbar /> <Footer /> </> }></Route>
+        <Route
+          path="/vbeef"
+          element={
+            <>
+              <ViewBeef /> <APNavbar /> <Footer />{" "}
+            </>
+          }
+        ></Route>
+        <Route
+          path="/upbeef"
+          element={
+            <>
+              <UpdateBeef /> <APNavbar /> <Footer />{" "}
+            </>
+          }
+        ></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
