@@ -7,6 +7,8 @@ import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
 
 import Animal from "./Components/AnimalProduction/Animal";
 import Beef from "./Components/AnimalProduction/Beef";
+import ViewBeef from "./Components/AnimalProduction/ViewBeef";
+import UpdateBeef from "./Components/AnimalProduction/UpdateBeef";
 import Test from "./Components/AnimalProduction/Test";
 import Milk from "./Components/AnimalProduction/Milk";
 import Egg from "./Components/AnimalProduction/Egg";
@@ -14,6 +16,7 @@ import Pork from "./Components/AnimalProduction/Pork";
 import Chicken from "./Components/AnimalProduction/Chicken";
 import GoatMilk from "./Components/AnimalProduction/GoatMilk";
 import Goat from "./Components/AnimalProduction/Goat";
+import Agri from "./Components/Agriculture/Agri";
 import APNavbar from "./Components/AnimalProduction/APNavbar";
 import Footer from "./Components/Footer";
 
@@ -49,6 +52,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Animal />}></Route>
+        <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
@@ -118,7 +122,7 @@ export default function App() {
           }
         />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
-        <Route path="/agriForm" element={<AgriBlogForm />} />
+        <Route path="/agriForm" element={<><AgriBlogForm /><Footer/></>} />
         <Route
           path="/agriServices"
           element={
@@ -217,9 +221,9 @@ export default function App() {
           path="/landingStaff"
           element={
             <>
-              {" "}
+              
               <NavLandingStaff /> <LandingPageStaff />
-              <Footer />{" "}
+              <Footer />
             </>
           }
         ></Route>
@@ -261,6 +265,8 @@ export default function App() {
             </>
           }
         ></Route>
+        <Route path="/vbeef" element={<><ViewBeef/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/upbeef" element={<><UpdateBeef/> <APNavbar /> <Footer /> </> }></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
