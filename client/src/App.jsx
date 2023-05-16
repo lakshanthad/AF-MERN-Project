@@ -45,6 +45,9 @@ import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
+import Home from "./Components/Home";
+import AboutUs from "./Components/AboutUs";
+
 export default function App() {
   return (
     <Router>
@@ -59,6 +62,72 @@ export default function App() {
         <Route path="/AnimalDataTable" element={<><AnimalGrassNavbar /><AnimalDataTable /></>} />
         <Route path="/agriTable" element={<><AgriGrassNavbar /><AgriDataTable /></>} />
         <Route path="/animalServices" element={<><AnimalStaffNavbar /><AnimalServices /></>} />
+        <Route
+          path="/home"
+          element={
+            <>
+              {" "}
+              <Home />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/aboutus"
+          element={
+            <>
+              {" "}
+              <AboutUs />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingStaff"
+          element={
+            <>
+              {" "}
+              <NavLandingStaff /> <LandingPageStaff />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/landingGrassroot"
+          element={
+            <>
+              {" "}
+              <NavLandingGrass /> <LandingPageGrassroot />{" "}
+            </>
+          }
+        ></Route>
+        <Route path="/selectionPage" element={<SelectionPage />}></Route>
+        <Route
+          path="/AnimalDataTable"
+          element={
+            <>
+              {" "}
+              <AnimalGrassNavbar /> <AnimalDataTable />{" "}
+            </>
+          }
+        />
+        <Route
+          path="/agriTable"
+          element={
+            <>
+              <AgriGrassNavbar /> <AgriDataTable />
+            </>
+          }
+        />
+        <Route
+          path="/animalServices"
+          ImageGridAgri
+          element={
+            <>
+              <AnimalStaffNavbar />
+              <AnimalServices />
+            </>
+          }
+        />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
         <Route path="/agriForm" element={<><AgriBlogForm /><Footer /></>} />
         <Route path="/agriServices" element={<><AgriStaffNavbar /><ImageGridAgri /><SelectionPageStaff /><Footer /></>} />
