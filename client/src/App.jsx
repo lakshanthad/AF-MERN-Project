@@ -42,6 +42,7 @@ import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
 import Home from "./Components/Home";
+import AboutUs from "./Components/AboutUs";
 
 export default function App() {
   return (
@@ -50,7 +51,26 @@ export default function App() {
         <Route path="/" element={<Animal />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route
+          path="/home"
+          element={
+            <>
+              {" "}
+              <Home />
+              <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/aboutus"
+          element={
+            <>
+              {" "}
+              <AboutUs />
+              <Footer />
+            </>
+          }
+        ></Route>
         <Route
           path="/landingStaff"
           element={
