@@ -45,6 +45,7 @@ import AnimalUserNav from "./Components/AnimalBlog/AnimalUserNav";
 import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
+import Login from "./Components/Login";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 
@@ -52,7 +53,7 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Animal />}></Route>
+        <Route path="/" element={<Login />}></Route>
         <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
