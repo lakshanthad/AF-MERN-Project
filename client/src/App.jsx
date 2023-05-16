@@ -8,6 +8,7 @@ import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
 import Animal from "./Components/AnimalProduction/Animal";
 import Beef from "./Components/AnimalProduction/Beef";
 import ViewBeef from "./Components/AnimalProduction/ViewBeef";
+import BeefDetails from "./Components/AnimalProduction/BeefDetails";
 import UpdateBeef from "./Components/AnimalProduction/UpdateBeef";
 import Test from "./Components/AnimalProduction/Test";
 import Milk from "./Components/AnimalProduction/Milk";
@@ -242,6 +243,7 @@ export default function App() {
             </>
           }
         ></Route>
+        <Route path='/singlebeef' element={<BeefDetails/>}></Route>
         <Route path="/vbeef" element={<><ViewBeef/> <APNavbar /> <Footer /> </> }></Route>
         <Route path="/upbeef" element={<><UpdateBeef/> <APNavbar /> <Footer /> </> }></Route>
         <Route path="/test" element={<Test />}></Route>

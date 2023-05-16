@@ -2,10 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
+import { Box, Paper, styled } from '@mui/material';
 import { confirmAlert } from 'react-confirm-alert'; 
 import Axios from 'axios';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -13,7 +13,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableFooter from '@mui/material/TableFooter';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 import IconButton from '@mui/material/IconButton';
 import FirstPageIcon from '@mui/icons-material/FirstPage';
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
@@ -84,6 +83,12 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
+const BackButtonContainer = styled(Box)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(3),
+  marginLeft: theme.spacing(15),
+  // textAlign: 'center',
+}));
 
 export default function CustomPaginationActionsTable() {
   const [beef, setProduct] = useState([]);
@@ -157,7 +162,12 @@ export default function CustomPaginationActionsTable() {
     <div>
       
       <TableContainer component={Paper} sx={{ mt: 15, mb: 10, mx: 'auto', maxWidth: 1400 }}>
-      <h1 className="h1" style={{ textAlign: 'center' }}>View Cattle Details</h1>
+        <h1 className="h1" style={{ textAlign: 'center' }}>View Cattle Details</h1>
+        <BackButtonContainer>
+          <Link to="/beef">
+          <Button variant="contained" color="success">Add Cattle Details</Button>
+          </Link>
+        </BackButtonContainer>
         <Table sx={{ maxWidth: 1400 }} aria-label="custom pagination table">
           <TableBody>
           <TableRow>
@@ -178,9 +188,14 @@ export default function CustomPaginationActionsTable() {
                 </TableCell>
                 <TableCell style={{ width: 20 }} align="center">
 
-                  <Button variant="contained" color="success" sx={{mr:2}}>View</Button>
-
-                  <Link to="/updateBeef">
+                <Link to="/singlebeef">
+                  <Button variant="contained" color="success" sx={{mr:2}}
+                    onClick={() => 
+                          setID(data._id, data.Region, data.Division, data.CPopulation, data.NeedPP, data.ConsuptionPY, data.SurplusDeficit, data.AvgCWeight, data.productionValue)
+                        }
+                  >View</Button>
+                </Link>
+                  <Link to="/upbeef">
                     <Button variant="contained" color="success" 
                       onClick={() => 
                         setID(data._id, data.Region, data.Division, data.CPopulation, data.NeedPP, data.ConsuptionPY, data.SurplusDeficit, data.AvgCWeight, data.productionValue)

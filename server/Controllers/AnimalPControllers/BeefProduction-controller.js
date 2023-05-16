@@ -82,7 +82,7 @@ const updateBeefProduction = async (req, res, next) => {
         productionValue
     };
 
-    const updateProduction = await BeefProduction.findOneAndUpdate(beefProductionID, updateBeefProduction).then(() => {
+    const updateProduction = await BeefProduction.findByIdAndUpdate(beefProductionID, updateBeefProduction).then(() => {
         res.status(200).send({ status: "Beef production is updated successfully!!"})
     })
     .catch((error) => {

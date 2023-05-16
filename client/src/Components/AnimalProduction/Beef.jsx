@@ -6,6 +6,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Autocomplete from "@mui/material/Autocomplete";
 import "./AnimalProduction.css";
+import { useNavigate } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -42,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Beef() {
   const classes = useStyles();
+  const navigate = useNavigate();
 
   // const [beefID, beefPID] = useState("");
   const [Region, setRegion] = useState("");
@@ -70,8 +72,9 @@ export default function Beef() {
     axios
       .post("http://localhost:8070/beefProduction/addBeefProduction", newBeef)
       .then(() => {
-        alert("New Beef added");
-        window.location.reload();
+        alert("New Beef details added");
+       
+        navigate("/vbeef");
       })
       .catch((err) => {
         alert(err);
