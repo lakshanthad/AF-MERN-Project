@@ -13,6 +13,8 @@ export default function Home() {
             id="carouselExampleIndicators"
             className="carousel slide"
             data-ride="carousel"
+            data-interval="3000"
+            data-pause="hover"
           >
             <ol className="carousel-indicators">
               <li
@@ -122,14 +124,12 @@ export default function Home() {
           </a>
         </div>
       </section>
+    </div>
+  );
+}
 
-      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.js"></script>
-      <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      ></script>
-      {/* 
+{
+  /* 
  <script type="text/javascript">
    $(".owl-carousel").owlCarousel({
      loop: true,
@@ -147,7 +147,5 @@ export default function Home() {
        }
      }
    });
- </script> */}
-    </div>
-  );
+ </script> */
 }

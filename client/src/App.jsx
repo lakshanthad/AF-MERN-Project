@@ -46,6 +46,8 @@ import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
+import HomeNavbar from "./Components/HomeNavBar";
+import HomeWhiteNavbar from "./Components/HomeWhiteNavbar";
 
 export default function App() {
   return (
@@ -67,6 +69,7 @@ export default function App() {
           element={
             <>
               {" "}
+              <HomeWhiteNavbar />
               <Home />
               <Footer />
             </>
@@ -77,6 +80,7 @@ export default function App() {
           element={
             <>
               {" "}
+              <HomeNavbar />
               <AboutUs />
               <Footer />
             </>
