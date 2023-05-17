@@ -47,7 +47,8 @@ import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import HomeNavbar from "./Components/HomeNavBar";
-import HomeWhiteNavbar from "./Components/HomeWhiteNavbar";
+import HomeWhiteNavbar from "./Components/HomeWhiteNavBar";
+import HomeTest from "./Components/HomeTest";
 
 export default function App() {
   return (
@@ -62,6 +63,7 @@ export default function App() {
             </>
           }
         ></Route>
+        <Route path="/htest" element={<HomeTest />}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
