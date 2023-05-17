@@ -24,6 +24,9 @@ import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
 import NavLandingStaff from "./Components/NavLandingStaff";
 
+import AgriSections from "./Components/AgriSections";
+import AnimalSections from "./Components/AnimalSections";
+
 import SelectionPage from "./Components/SelectionPage";
 import AnimalDataTable from "./Components/AnimalDataTable";
 import AgriDataTable from "./Components/AgriDataTable";
@@ -48,7 +51,6 @@ import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import HomeNavbar from "./Components/HomeNavBar";
 import HomeWhiteNavbar from "./Components/HomeWhiteNavBar";
-import HomeTest from "./Components/HomeTest";
 
 export default function App() {
   return (
@@ -63,7 +65,24 @@ export default function App() {
             </>
           }
         ></Route>
-        <Route path="/htest" element={<HomeTest />}></Route>
+
+        <Route
+          path="/animchoose"
+          element={
+            <>
+              <AgriSections /> <Footer />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/agrichoose"
+          element={
+            <>
+              <AnimalSections />
+              <Footer />
+            </>
+          }
+        ></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route
