@@ -1,4 +1,4 @@
-import { Link } from "react";
+
 import "./css/agriSection.css";
 
 export default function AgriSections() {
