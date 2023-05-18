@@ -68,7 +68,7 @@ export default function SignIn() {
           });
     
           if (response.ok) {
-            navigate("/vbeef");
+            navigate("/adminselect");
            
             sessionStorage.setItem('hasLoggedIn', 'true');
           } else {

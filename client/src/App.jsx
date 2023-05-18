@@ -60,7 +60,11 @@ import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import HomeNavbar from "./Components/HomeNavBar";
 import HomeWhiteNavbar from "./Components/HomeWhiteNavBar";
-
+import AdminNavi1 from "./Components/AdminNavi1";
+import GrassrootSelect from "./Components/GrassrootSelect";
+import GrassAdminSelect from "./Components/GrassAdminSelect";
+import AnimalSectionAdmin from "./Components/AnimalSectionAdmin";
+import AgriAdminSelector from "./Components/AgriAdminSelector";
 // function PrivateRoute({ path, element }) {
 //   const hasLoggedIn = sessionStorage.getItem('hasLoggedIn') === 'true';
 
@@ -83,7 +87,7 @@ export default function App() {
     <Router>
       <Routes>
       
-        <Route path="/" element={<Login />}></Route>
+        <Route path="/login" element={<Login />}></Route>
         <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
@@ -93,7 +97,7 @@ export default function App() {
         <Route path="/AnimalDataTable" element={<><AnimalGrassNavbar /><AnimalDataTable /></>} />
         <Route path="/agriTable" element={<><AgriGrassNavbar /><AgriDataTable /></>} />
         <Route path="/animalServices" element={<><AnimalStaffNavbar /><AnimalServices /></>} />
-        <Route path="/home" element={<><HomeWhiteNavbar/><Home /><Footer /></>} />
+        <Route path="/" element={<><HomeWhiteNavbar/><Home /><Footer /></>} />
         <Route path="/aboutus" element={<><HomeNavbar/><AboutUs /><Footer /></>} />
         <Route path="/landingStaff" element={<><NavLandingStaff /><LandingPageStaff /></>} />
         <Route path="/landingGrassroot" element={<><NavLandingGrass /><LandingPageGrassroot /></>} />
@@ -130,10 +134,13 @@ export default function App() {
         <Route path="/goatmilk" element={<><GoatMilk /><APNavbar /><Footer /></>} />
         <Route path="/goat" element={<><Goat /><APNavbar /><Footer /></>} />
 
-        <Route path="/animsection" element={<><AgriSections /><Footer /></>} />
-        <Route path="/agrisection" element={<><AnimalSections /><Footer /></>} />
-        
-        
+        <Route path="/animsection" element={<><HomeNavbar/><AgriSections /><Footer /></>} />
+        <Route path="/agrisection" element={<><HomeNavbar/><AnimalSections /><Footer /></>} />
+        <Route path="/adminselect" element={<><HomeNavbar/><AdminNavi1 /><Footer /></>} />
+        <Route path="/grassselect" element={<><HomeNavbar/><GrassrootSelect /><Footer /></>} />
+        <Route path="/grasstypeselect" element={<><HomeNavbar/><GrassAdminSelect /><Footer /></>} />
+        <Route path="/sanimsection" element={<><HomeNavbar/><AnimalSectionAdmin /><Footer /></>} />
+        <Route path="/sagrisection" element={<><HomeNavbar/><AgriAdminSelector /><Footer /></>} />
       </Routes>
     </Router>
   );
