@@ -1,19 +1,19 @@
 
 import "./css/agriSection.css";
 
-export default function AgriSections() {
+export default function AnimalSectionAdmin() {
   const images = [
     {
       src: "./Assets/agriSections/chicken.png",
       alt: "Chicken",
       text: "Chicken",
-      
+      link: "/vchicken"
     },
     {
       src: "./Assets/agriSections/cow.png",
       alt: "Cow",
       text: "Beef Production",
-      link: "/cusviewbeef"
+      link: "/vbeef"
     },
     {
       src: "./Assets/agriSections/egg.png",
