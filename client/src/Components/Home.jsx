@@ -33,7 +33,7 @@ export default function Home() {
                             Agricultural data related to Sabaragamuwa Province.
                           </h4>
                           <div className="">
-                            <a href="">View</a>
+                            <a href="/agrisection">View</a>
                           </div>
                         </div>
                       </div>
@@ -57,7 +57,7 @@ export default function Home() {
                           <h1>Animal Data</h1>
                           <h4>Animal data related to Sabaragamuwa Province.</h4>
                           <div className="">
-                            <a href="">View</a>
+                            <a href="/animsection">View</a>
                           </div>
                         </div>
                       </div>
@@ -80,7 +80,7 @@ export default function Home() {
           <h2>Articles</h2>
         </div>
         <div className="how_container">
-          <a href="#" style={{ textDecoration: "none" }}>
+          <a href="/agriUser" style={{ textDecoration: "none" }}>
             <div className="box">
               <div className="img-box">
                 <img
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
             </div>
           </a>
-          <a href="#" style={{ textDecoration: "none" }}>
+          <a href="/allanimblogs" style={{ textDecoration: "none" }}>
             <div className="box">
               <div className="img-box">
                 <img src="../Assets/homePage/livestock.png" />
