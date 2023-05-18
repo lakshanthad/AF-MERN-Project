@@ -1,0 +1,40 @@
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery img {
+    width: 400px;
+    height: 400px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+  .image-container {
+    position: relative;
+  }
+  
+  .text-container {
+    position: absolute;
+    font-weight: bold;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+  }
+  

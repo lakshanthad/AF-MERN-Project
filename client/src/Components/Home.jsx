@@ -1,85 +1,77 @@
-import React from "react";
+// import React from "react";
+
 import "./css/responsive.css";
 import "./css/style.css";
 import "./css/bootstrap.css";
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function Home() {
   return (
     <div>
       <div className="hero_area">
-        <section className=" slider_section position-relative">
-          <div
-            id="carouselExampleIndicators"
-            className="carousel slide"
-            data-ride="carousel"
+        <section className="slider_section position-relative">
+          <Carousel
+            autoPlay
+            interval={3000}
+            infiniteLoop
+            showArrows={false}
+            showStatus={false}
+            showThumbs={false}
+            stopOnHover
           >
-            <ol className="carousel-indicators">
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="0"
-                className="active"
-              ></li>
-              <li
-                data-target="#carouselExampleIndicators"
-                data-slide-to="1"
-              ></li>
-            </ol>
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <div className="container">
-                  <div className="box">
-                    <div className="row">
-                      <div className="col-md-7">
-                        <div className="detail-box">
-                          <div>
-                            <h1>Agricultural Data</h1>
-                            <h4>
-                              Agricultural data related to Sabaragamuwa
-                              Province.
-                            </h4>
-                            <div className="">
-                              <a href="">View</a>
-                            </div>
+            <div className="carousel_item">
+              <div className="container">
+                <div className="box">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <div className="detail-box">
+                        <div>
+                          <h1>Agricultural Data</h1>
+                          <h4>
+                            Agricultural data related to Sabaragamuwa Province.
+                          </h4>
+                          <div className="">
+                            <a href="">View</a>
                           </div>
-                        </div>
-                      </div>
-                      <div className="col-md-5">
-                        <div className="img-box">
-                          <img src="./Assets/homePage/plant.png" alt="" />
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <div className="container">
-                  <div className="box">
-                    <div className="row">
-                      <div className="col-md-7">
-                        <div className="detail-box">
-                          <div>
-                            <h1>Animal Data</h1>
-                            <h4>
-                              Animal data related to Sabaragamuwa Province.
-                            </h4>
-                            <div className="">
-                              <a href="">View</a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="col-md-5">
-                        <div className="img-box">
-                          <img src="./Assets/homePage/cow.png" alt="" />
-                        </div>
+                    <div className="col-md-5">
+                      <div className="img-box">
+                        <img src="./Assets/homePage/plant.png" alt="" />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            <div className="carousel_item">
+              <div className="container">
+                <div className="box">
+                  <div className="row">
+                    <div className="col-md-7">
+                      <div className="detail-box">
+                        <div>
+                          <h1>Animal Data</h1>
+                          <h4>Animal data related to Sabaragamuwa Province.</h4>
+                          <div className="">
+                            <a href="">View</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-5">
+                      <div className="img-box">
+                        <img src="./Assets/homePage/cow.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Carousel>
         </section>
       </div>
 
@@ -88,7 +80,7 @@ export default function Home() {
           <h2>Articles</h2>
         </div>
         <div className="how_container">
-          <a href="#">
+          <a href="#" style={{ textDecoration: "none" }}>
             <div className="box">
               <div className="img-box">
                 <img
@@ -97,15 +89,15 @@ export default function Home() {
                 />
               </div>
               <div className="detail-box">
-                <h5>Agricultural Articles</h5>
-                <p>
+                <h5 style={{ textDecoration: "none" }}>Agricultural Articles</h5>
+                <p style={{ textDecoration: "none" }}>
                   Read the latest articles published on agriculture and farming
                   in Sabaragamuwa Province.
                 </p>
               </div>
             </div>
           </a>
-          <a href="#">
+          <a href="#" style={{ textDecoration: "none" }}>
             <div className="box">
               <div className="img-box">
                 <img src="../Assets/homePage/livestock.png" />
@@ -121,14 +113,12 @@ export default function Home() {
           </a>
         </div>
       </section>
+    </div>
+  );
+}
 
-      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.js"></script>
-      <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      ></script>
-      {/* 
+{
+  /* 
  <script type="text/javascript">
    $(".owl-carousel").owlCarousel({
      loop: true,
@@ -146,7 +136,5 @@ export default function Home() {
        }
      }
    });
- </script> */}
-    </div>
-  );
+ </script> */
 }
