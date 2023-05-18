@@ -10,6 +10,9 @@ const theme = createTheme({
     primary: {
       main: "#ffff",
     },
+    secondary: {
+      main: "#1a8b1f",
+    },
   },
 });
 
@@ -35,11 +38,11 @@ export default function HomeWhiteNavbar() {
               LAAIF
             </Typography>
             <div>
-              <Button color="inherit">Home</Button>
+              <Button color="secondary">Home</Button>
 
-              <Button color="inherit">About</Button>
+              <Button color="secondary">About</Button>
 
-              <Button color="inherit">Contact</Button>
+              <Button color="secondary">Contact</Button>
             </div>
           </Toolbar>
         </AppBar>
