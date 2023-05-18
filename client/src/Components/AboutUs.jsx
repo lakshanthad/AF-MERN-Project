@@ -9,28 +9,34 @@ export default function AboutUs() {
           <h1>About Us</h1>
         </div>
         <p>
-          Welcome to our website! We are a team of dedicated individuals
-          passionate about providing high-quality products and services.
+          Welcome to the Sabaragamuwa Ministry website! We are your premier
+          source for
         </p>
         <p>
-          Our mission is to exceed customer expectations by delivering
-          innovative solutions that meet their needs.
+          comprehensive data and information on animal production and health, as
+          well as agriculture
         </p>
         <p>
-          With years of experience in the industry, we have built a strong
-          reputation for our reliability, professionalism, and exceptional
-          customer service.
+          in our province. Our mission is to provide valuable insights and
+          resources to empower
         </p>
         <p>
-          At our company, we value integrity, collaboration, and continuous
-          improvement. We strive to create a positive impact in the communities
-          we serve.
+          farmers, researchers, and the general public. Through our articles, we
+          aim to enhance
         </p>
         <p>
-          Feel free to explore our website and learn more about our offerings.
-          If you have any questions or inquiries, don't hesitate to reach out to
-          us.
+          awareness and understanding of the vibrant animal and agricultural
+          sectors in
         </p>
+        <p>
+          Sabaragamuwa. Explore our website to stay informed and engaged with
+          the latest
+        </p>
+        <p>
+          developments, best practices, and initiatives shaping our region's
+          animal and agricultural landscape.
+        </p>
+
         <p>Thank you for choosing us!</p>
         <div className="images-container">
           <img src="../Assets/homePage/logo.jpg" alt="national-logo" />
