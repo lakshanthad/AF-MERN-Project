@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 import { ThemeProvider, makeStyles } from "@material-ui/core/styles";
 import { createTheme } from "@material-ui/core/styles";
@@ -41,45 +42,48 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Chicken() {
+export default function Beef() {
   const classes = useStyles();
   const navigate = useNavigate();
 
-  // const [beefID, beefPID] = useState("");
-  const [Region, setRegion] = useState("");
-  const [Division, setDivision] = useState("");
-  const [CPopulation, setCPopulation] = useState("");
-  const [NeedPP, setNeedPP] = useState("");
-  const [ConsuptionPY, setConsuptionPY] = useState("");
-  const [SurplusDeficit, setSurplusDeficit] = useState("");
-  const [AvgCWeight, setAvgCWeight] = useState("");
-  const [productionValue, setPproductionValue] = useState("");
+  const [ID, setID] = useState("");
+  const [Region, setRegi] = useState('');
+  const [Division, setDivi] = useState('');
+  const [CPopulation, setCPopu] = useState('');
+  const [NeedPP, setNeedPP] = useState('');
+  const [ConsuptionPY, setConsupPY] = useState('');
+  const [SurplusDeficit, setSurDefi] = useState('');
+  const [AvgCWeight, setAvgCWeight] = useState(''); 
+  const [productionValue, setProValue] = useState('');
 
-  function sendData(e) {
-    e.preventDefault();
-    const newChicken = {
-      Region,
-      Division,
-      CPopulation,
-      NeedPP,
-      ConsuptionPY,
-      SurplusDeficit,
-      AvgCWeight,
-      productionValue,
-    };
-    console.log(newChicken);
-    //send http request
-    axios
-      .post("http://localhost:8070/chickenProduction/addChickenProduction", newChicken)
-      .then(() => {
-        alert("New Chicken details added");
-       
-        navigate("/vChicken");
-      })
-      .catch((err) => {
-        alert(err);
+  const sendDataToUpdate = () => {
+    axios.put(`http://localhost:8070/chickenProduction/updateChickenProduction/${ID}`, {
+        Region, 
+        Division, 
+        CPopulation, 
+        NeedPP, 
+        ConsuptionPY, 
+        SurplusDeficit, 
+        AvgCWeight, 
+        productionValue
+
       });
-  }
+      alert("Chicken Details Updated Successfully");
+      navigate("/vchicken");
+  };
+
+  useEffect(()=>{
+    setID(localStorage.getItem('ID'));
+    setRegi(localStorage.getItem('Region'));
+    setDivi(localStorage.getItem('Division'));
+    setCPopu(localStorage.getItem('CPopulation'));
+    setNeedPP(localStorage.getItem('NeedPP'));
+    setConsupPY(localStorage.getItem('ConsuptionPY'));
+    setSurDefi(localStorage.getItem('SurplusDeficit'));
+    setAvgCWeight(localStorage.getItem('AvgCWeight'));
+    setProValue(localStorage.getItem('productionValue'));
+  
+  },[]); 
 
   const Regi = [
     // Regi = Region
@@ -124,8 +128,8 @@ export default function Chicken() {
 
   return (
     <ThemeProvider theme={theme}>
-      <form className={classes.form} onSubmit={sendData}>
-        <h1 className="h1">Chicken Production Details</h1>
+      <form className={classes.form} onSubmit={sendDataToUpdate}>
+        <h1 className="h1">Update Chicken Details</h1>
         <div className={classes.root}>
           <Autocomplete
             disablePortal
@@ -133,7 +137,8 @@ export default function Chicken() {
             sx={{ width: 325 }}
             options={Regi}
             textContent={Region}
-            onChange={(e) => {setRegion(e.target.textContent);}}
+            value={Region}
+            onChange={(e) => {setRegi(e.target.textContent);}}
             renderInput={(params) => <TextField {...params} label="Select Region" required = {true}/>}  
           />
           <Autocomplete
@@ -142,7 +147,8 @@ export default function Chicken() {
             sx={{ width: 325 }}
             options={Divi}
             textContent={Division}
-            onChange={(e) => {setDivision(e.target.textContent);}}
+            value={Division}
+            onChange={(e) => {setDivi(e.target.textContent);}}
             renderInput={(params) => <TextField {...params} label="Select Division" required = {true}/>}
           />
         </div>
@@ -152,8 +158,9 @@ export default function Chicken() {
           label="Chicken Population"
           variant="outlined"
           name="species" // name from the animal object
+          value={CPopulation}
           onChange={(e) => {
-            setCPopulation(e.target.value);
+            setCPopu(e.target.value);
           }}
           required = {true}
         />
@@ -162,6 +169,7 @@ export default function Chicken() {
           label="Consumption per person ( Per week )"
           variant="outlined"
           name="age"
+          value={NeedPP}
           onChange={(e) => {
             setNeedPP(e.target.value);
           }}
@@ -173,8 +181,9 @@ export default function Chicken() {
           variant="outlined"
           color="primary"
           name="habitat"
+          value={ConsuptionPY}
           onChange={(e) => {
-            setConsuptionPY(e.target.value);
+            setConsupPY(e.target.value);
           }}
           required = {true}
         />
@@ -184,8 +193,9 @@ export default function Chicken() {
         label="Surplus / Deficit"
         variant="outlined"
         name="Cattle Population" // name from the animal object
+        value={SurplusDeficit}
         onChange={(e) => {
-          setSurplusDeficit(e.target.value);
+          setSurDefi(e.target.value);
         }}
         required = {true}
       />
@@ -196,7 +206,8 @@ export default function Chicken() {
           label="Chicken production per year ( per poultry )"
           variant="outlined"
           color="primary"
-          name="habitat"
+          name="avgweightofcows"
+          value={AvgCWeight}
           onChange={(e) => {
             setAvgCWeight(e.target.value);
           }}
@@ -208,8 +219,9 @@ export default function Chicken() {
           variant="outlined"
           color="primary"
           name="habitat"
+          value={productionValue}
           onChange={(e) => {
-            setPproductionValue(e.target.value);
+            setProValue(e.target.value);
           }}
           required = {true}
         />
@@ -220,7 +232,7 @@ export default function Chicken() {
           color="primary"
           type="submit"
         >
-          Submit
+          Update
         </Button>
       </form>
     </ThemeProvider>

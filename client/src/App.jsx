@@ -1,20 +1,27 @@
 // import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+// import PropTypes from 'prop-types';
 
 import AnimalBlog from "./Components/AnimalBlog/AnimalBlog";
 import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
 import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
+
+import CusViewBeef from "./Components/CustomerAP/CusViewBeef";
 
 import Animal from "./Components/AnimalProduction/Animal";
 import Beef from "./Components/AnimalProduction/Beef";
 import ViewBeef from "./Components/AnimalProduction/ViewBeef";
 import BeefDetails from "./Components/AnimalProduction/BeefDetails";
 import UpdateBeef from "./Components/AnimalProduction/UpdateBeef";
+import Chicken from "./Components/AnimalProduction/Chicken";
+import ChickenDetails from "./Components/AnimalProduction/ChickenDetails";
+import ViewChicken from "./Components/AnimalProduction/ViewChicken";
+import UpdateChicken from "./Components/AnimalProduction/UpdateChicken";
 import Test from "./Components/AnimalProduction/Test";
 import Milk from "./Components/AnimalProduction/Milk";
 import Egg from "./Components/AnimalProduction/Egg";
 import Pork from "./Components/AnimalProduction/Pork";
-import Chicken from "./Components/AnimalProduction/Chicken";
 import GoatMilk from "./Components/AnimalProduction/GoatMilk";
 import Goat from "./Components/AnimalProduction/Goat";
 import Agri from "./Components/Agriculture/Agri";
@@ -54,6 +61,23 @@ import AboutUs from "./Components/AboutUs";
 import HomeNavbar from "./Components/HomeNavBar";
 import HomeWhiteNavbar from "./Components/HomeWhiteNavBar";
 
+// function PrivateRoute({ path, element }) {
+//   const hasLoggedIn = sessionStorage.getItem('hasLoggedIn') === 'true';
+
+//   return hasLoggedIn ? (
+//     <Route path={path} element={element} />
+//   ) : (
+//     <Navigate to="/" replace />
+//   );
+
+ 
+// }
+
+// PrivateRoute.propTypes = {
+//   path: PropTypes.string.isRequired,
+//   element: PropTypes.element.isRequired
+// }
+
 export default function App() {
   return (
     <Router>
@@ -77,7 +101,6 @@ export default function App() {
         <Route path="/AnimalDataTable" element={<><AnimalGrassNavbar /><AnimalDataTable /></>} />
         <Route path="/agriTable" element={<><AgriGrassNavbar /><AgriDataTable /></>} />
         <Route path="/animalServices" element={<><AnimalStaffNavbar /><AnimalServices /></>} />
-        <Route path="/" element={<Animal />} />
         <Route path="/selectionStaff" element={<SelectionPageStaff />} />
         <Route path="/agriForm" element={<><AgriBlogForm /><Footer /></>} />
         <Route path="/agriServices" element={<><AgriStaffNavbar /><ImageGridAgri /><SelectionPageStaff /><Footer /></>} />
@@ -89,7 +112,8 @@ export default function App() {
         <Route path="/animalArticle" element={<AnimalBlog />} />
         <Route path="/allBlogStaff" element={<><AnimalStaffNavbar /><AllBlogsStaff /><SelectionPageStaff /><Footer /></>} />
         <Route path="/blogUpdate" element={<><UpdateBlog /><Footer /></>} />
-        <Route path="/" element={<Animal />} />
+
+        <Route path="/cusviewbeef" element={<CusViewBeef />} />
         <Route path="/test" element={<Test />} />
         <Route path="/animal" element={<Animal />} />
         <Route path="/milk" element={<><Milk /><APNavbar /><Footer /></>} />
@@ -100,6 +124,9 @@ export default function App() {
         <Route path="/egg" element={<><Egg /><APNavbar /><Footer /></>} />
         <Route path="/pork" element={<><Pork /><APNavbar /><Footer /></>} />
         <Route path="/chicken" element={<><Chicken /><APNavbar /><Footer /></>} />
+        <Route path="/singlechicken" element={<ChickenDetails />} />
+        <Route path="/vchicken" element={<><ViewChicken /><APNavbar /><Footer /></>} />
+        <Route path="/upchicken" element={<><UpdateChicken /><APNavbar /><Footer /></>} />
         <Route path="/goatmilk" element={<><GoatMilk /><APNavbar /><Footer /></>} />
         <Route path="/goat" element={<><Goat /><APNavbar /><Footer /></>} />
 

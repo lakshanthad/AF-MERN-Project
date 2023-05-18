@@ -12,7 +12,7 @@ import green from '@mui/material/colors/green';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import axios from 'axios';
+// import axios from 'axios';
 
 function Copyright(props) {
   return (
@@ -48,35 +48,37 @@ export default function SignIn() {
   const navigate = useNavigate();
   const [username,setUsername]=useState('')
   const [password,setPassword]=useState('')
+ 
 
-  async function submit(e){
-      e.preventDefault();
 
-      try{
 
-          await axios.post("http://localhost:8070/login/loginCheck",{
-              username,password
-          })
-          .then(res=>{
-              if(res.data=="exist"){
-                  navigate("/vbeef")
-              }
-              else if(res.data=="notexist"){
-                  alert("User have not sign up")
-              }
-          })
-          .catch(e=>{
-              alert("wrong details")
-              console.log(e);
-          })
 
-      }
-      catch(e){
-          console.log(e);
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const response = await fetch("http://localhost:8070/grass/loginGrass", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, password }),
 
-      }
-
-  }
+            
+          });
+    
+          if (response.ok) {
+            navigate("/vbeef");
+           
+            sessionStorage.setItem('hasLoggedIn', 'true');
+          } else {
+            alert("Login failed. Please check your credentials and try again.");
+          }
+        } catch (error) {
+          console.error(error);
+          alert("An error occurred. Please try again later.");
+        }
+      };  
 
   return (
     <ThemeProvider theme={theme}>
@@ -96,7 +98,7 @@ export default function SignIn() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={submit} noValidate sx={{ mt: 1 }}>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required

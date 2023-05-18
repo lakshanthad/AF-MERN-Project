@@ -106,7 +106,7 @@ const updateEggProduction = async (req, res, next) => {
         Year,
     };
 
-    const updateProduction = await EggProduction.findOneAndUpdate(eggProductionID, updateEggProduction).then(() => {
+    const updateProduction = await EggProduction.findByIdAndUpdate(eggProductionID, updateEggProduction).then(() => {
         res.status(200).send({ status: "Egg production is updated successfully!!"})
     })
     .catch((error) => {
@@ -119,7 +119,7 @@ const updateEggProduction = async (req, res, next) => {
 const deleteEggProduction  = async (req, res, next) => {
     let eggProductionID = req.params.id;
 
-    await EggProduction.findOneAndDelete(eggProductionID).then(() => {
+    await EggProduction.findByIdAndDelete(eggProductionID).then(() => {
         res.status(200).send({ status: "Egg production have been deleted successfully!!"});
     })
     .catch((error) => {

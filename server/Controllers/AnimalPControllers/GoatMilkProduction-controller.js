@@ -102,7 +102,7 @@ const updateGoatMilkProduction = async (req, res, next) => {
         Year
     };
 
-    const updateProduction = await GoatMilkProduction.findOneAndUpdate(goatMilkProductionID, updateGoatMilkProduction).then(() => {
+    const updateProduction = await GoatMilkProduction.findByIdAndUpdate(goatMilkProductionID, updateGoatMilkProduction).then(() => {
         res.status(200).send({ status: "Goat Milk production is updated successfully!!"})
     })
     .catch((error) => {
@@ -115,7 +115,7 @@ const updateGoatMilkProduction = async (req, res, next) => {
 const deleteGoatMilkProduction  = async (req, res, next) => {
     let goatMilkProductionID = req.params.id;
 
-    await GoatMilkProduction.findOneAndDelete(goatMilkProductionID).then(() => {
+    await GoatMilkProduction.findByIdAndDelete(goatMilkProductionID).then(() => {
         res.status(200).send({ status: "Goat Milk production have been deleted successfully!!"});
     })
     .catch((error) => {
