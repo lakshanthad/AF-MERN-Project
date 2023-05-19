@@ -90,13 +90,13 @@ const BackButtonContainer = styled(Box)(({ theme }) => ({
 }));
 
 export default function CustomPaginationActionsTable() {
-  const [beef, setProduct] = useState([]);
+  const [chicken, setProduct] = useState([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - beef.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - chicken.length) : 0;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -112,9 +112,9 @@ export default function CustomPaginationActionsTable() {
 
 
   useEffect(() => {
-    Axios.get('http://localhost:8070/beefProduction/getBeefProduction')
-      .then((getBeef) => {
-        setProduct(getBeef.data);
+    Axios.get('http://localhost:8070/chickenProduction/getChickenProduction')
+      .then((getChicken) => {
+        setProduct(getChicken.data);
       })
   })
   
@@ -131,7 +131,6 @@ export default function CustomPaginationActionsTable() {
         localStorage.setItem('productionValue', productionValue);
         localStorage.setItem('ID', _id);
   }
-
   
 
 
@@ -140,7 +139,7 @@ export default function CustomPaginationActionsTable() {
     <div>
       
       <TableContainer component={Paper} sx={{ mt: 15, mb: 10, mx: 'auto', maxWidth: 1400 }}>
-        <h1 className="h1" style={{ textAlign: 'center' }}>View Cattle Details</h1>
+        <h1 className="h1" style={{ textAlign: 'center' }}>View Chicken Details</h1>
         <BackButtonContainer>
         </BackButtonContainer>
         <Table sx={{ maxWidth: 1400 }} aria-label="custom pagination table">
@@ -151,8 +150,8 @@ export default function CustomPaginationActionsTable() {
             <TableCell style={{ width: 20, fontWeight: 'bold', fontSize: '1.2rem' }} align="center">Actions</TableCell>
           </TableRow>
             {(rowsPerPage > 0
-              ? beef.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              : beef
+              ? chicken.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : chicken
             ).map((data) => (
               <TableRow key={data._id}>
                 <TableCell style={{ width: 100 }} align="center">
@@ -163,13 +162,14 @@ export default function CustomPaginationActionsTable() {
                 </TableCell>
                 <TableCell style={{ width: 20 }} align="center">
 
-                <Link to="/cusSinglebeef">
+                <Link to="/cusSinglechicken">
                   <Button variant="contained" color="success" sx={{mr:2}}
                     onClick={() => 
                           setID(data._id, data.Region, data.Division, data.CPopulation, data.NeedPP, data.ConsuptionPY, data.SurplusDeficit, data.AvgCWeight, data.productionValue)
                         }
                   >View</Button>
                 </Link>
+
                  
                 </TableCell>
               </TableRow>
@@ -186,7 +186,7 @@ export default function CustomPaginationActionsTable() {
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
                 colSpan={6}
-                count={beef.length}
+                count={chicken.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 SelectProps={{
