@@ -44,9 +44,9 @@ app.use("/agriBlog", agriBlogRouter);
 const beefProductionRouter = require("./Routes/Animal-routes/BeefProduction-route");
 app.use("/beefProduction", beefProductionRouter);
 
-//Milk production routes.
-const milkProductionRouter = require("./Routes/Animal-routes/MilkProduction-route");
-app.use("/milkProduction", milkProductionRouter);
+// //Milk production routes.
+// const milkProductionRouter = require("./Routes/Animal-routes/MilkProduction-route");
+// app.use("/milkProduction", milkProductionRouter);
 
 //Egg production routes.
 const eggProductionRouter = require("./Routes/Animal-routes/EggProduction-route");
