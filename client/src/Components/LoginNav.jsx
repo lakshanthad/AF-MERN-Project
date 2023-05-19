@@ -3,7 +3,7 @@ import { createTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
+
 
 const theme = createTheme({
   palette: {
@@ -34,9 +34,6 @@ export default function HomeNavbar() {
               LAAIF
             </Typography>
             <div>
-              <Button color="inherit" href="/">Home</Button>
-              <Button color="inherit" href="/aboutus">About</Button>
-              <Button color="inherit">Contact</Button>
             </div>
           </Toolbar>
         </AppBar>

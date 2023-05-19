@@ -36,9 +36,9 @@ export default function Navbar() {
             LAAIF
           </Typography>
           <div>
-            <Button color="inherit">Home</Button>
-            <Button color="inherit">About</Button>
-            <Button color="inherit">Contact</Button>
+            <Button color="inherit" href="/adminselect">Admin Home</Button>
+            <Button color="inherit" href="/">User Home</Button>
+            
           </div>
         </Toolbar>
       </AppBar>

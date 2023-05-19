@@ -7,6 +7,7 @@ export default function AgriSections() {
       src: "./Assets/agriSections/chicken.png",
       alt: "Chicken",
       text: "Chicken",
+      link: "/cusviewchicken"
       
     },
     {

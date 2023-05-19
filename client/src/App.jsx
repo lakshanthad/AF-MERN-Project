@@ -8,6 +8,9 @@ import AllBlogsStaff from "./Components/AnimalBlog/AllBlogsStaff";
 import UpdateBlog from "./Components/AnimalBlog/UpdateBlog";
 
 import CusViewBeef from "./Components/CustomerAP/CusViewBeef";
+import SingleBeefDetails from "./Components/CustomerAP/BeefDetails"
+import CusViewChicken from "./Components/CustomerAP/CusViewChicken";
+import SingleChickenDetails from "./Components/CustomerAP/ChickenDetails";
 
 import Animal from "./Components/AnimalProduction/Animal";
 import Beef from "./Components/AnimalProduction/Beef";
@@ -27,6 +30,7 @@ import Goat from "./Components/AnimalProduction/Goat";
 import Agri from "./Components/Agriculture/Agri";
 import APNavbar from "./Components/AnimalProduction/APNavbar";
 import Footer from "./Components/Footer";
+import AdminFooter from "./Components/AdminFooter";
 
 import LandingPageGrassroot from "./Components/LandingPageGrassroot";
 import LandingPageStaff from "./Components/LandinPageStaff";
@@ -56,6 +60,7 @@ import AllAnimalBlogs from "./Components/AnimalBlog/AllAnimalBlogs";
 import AnimalBlogForm from "./Components/AnimalBlog/AnimalBlogForm";
 
 import Login from "./Components/Login";
+import LoginNav from "./Components/LoginNav";
 import Home from "./Components/Home";
 import AboutUs from "./Components/AboutUs";
 import HomeNavbar from "./Components/HomeNavBar";
@@ -87,7 +92,7 @@ export default function App() {
     <Router>
       <Routes>
       
-        <Route path="/login" element={<Login />}></Route>
+        <Route path="/login" element={<><Login/> <LoginNav /> <AdminFooter /></>}></Route>
         <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
@@ -117,30 +122,34 @@ export default function App() {
         <Route path="/allBlogStaff" element={<><AnimalStaffNavbar /><AllBlogsStaff /><SelectionPageStaff /><Footer /></>} />
         <Route path="/blogUpdate" element={<><UpdateBlog /><Footer /></>} />
 
-        <Route path="/cusviewbeef" element={<CusViewBeef />} />
+        <Route path="/cusviewbeef" element={<><HomeNavbar/><CusViewBeef /><Footer /></>} />
+        <Route path="/cusviewchicken" element={<><HomeNavbar/><CusViewChicken /><Footer /></>} />
+        <Route path="/cusSinglechicken" element={<><HomeNavbar/><SingleChickenDetails /><Footer /></>} />
+        <Route path="/cusSinglebeef" element={<><HomeNavbar/><SingleBeefDetails /><Footer /></>} />
         <Route path="/test" element={<Test />} />
         <Route path="/animal" element={<Animal />} />
-        <Route path="/milk" element={<><Milk /><APNavbar /><Footer /></>} />
-        <Route path="/beef" element={<><Beef /><APNavbar /><Footer /></>} />
-        <Route path="/singlebeef" element={<BeefDetails />} />
-        <Route path="/vbeef" element={<><ViewBeef /><APNavbar /><Footer /></>} />
-        <Route path="/upbeef" element={<><UpdateBeef /><APNavbar /><Footer /></>} />
-        <Route path="/egg" element={<><Egg /><APNavbar /><Footer /></>} />
-        <Route path="/pork" element={<><Pork /><APNavbar /><Footer /></>} />
-        <Route path="/chicken" element={<><Chicken /><APNavbar /><Footer /></>} />
-        <Route path="/singlechicken" element={<ChickenDetails />} />
-        <Route path="/vchicken" element={<><ViewChicken /><APNavbar /><Footer /></>} />
-        <Route path="/upchicken" element={<><UpdateChicken /><APNavbar /><Footer /></>} />
-        <Route path="/goatmilk" element={<><GoatMilk /><APNavbar /><Footer /></>} />
-        <Route path="/goat" element={<><Goat /><APNavbar /><Footer /></>} />
+        <Route path="/milk" element={<><Milk /><APNavbar /><AdminFooter /></>} />
+        <Route path="/beef" element={<><Beef /><APNavbar /><AdminFooter /></>} />
 
-        <Route path="/animsection" element={<><HomeNavbar/><AgriSections /><Footer /></>} />
-        <Route path="/agrisection" element={<><HomeNavbar/><AnimalSections /><Footer /></>} />
-        <Route path="/adminselect" element={<><HomeNavbar/><AdminNavi1 /><Footer /></>} />
-        <Route path="/grassselect" element={<><HomeNavbar/><GrassrootSelect /><Footer /></>} />
-        <Route path="/grasstypeselect" element={<><HomeNavbar/><GrassAdminSelect /><Footer /></>} />
-        <Route path="/sanimsection" element={<><HomeNavbar/><AnimalSectionAdmin /><Footer /></>} />
-        <Route path="/sagrisection" element={<><HomeNavbar/><AgriAdminSelector /><Footer /></>} />
+        <Route path="/singlebeef" element={<BeefDetails />} />
+        <Route path="/vbeef" element={<><ViewBeef /><APNavbar /><AdminFooter /></>} />
+        <Route path="/upbeef" element={<><UpdateBeef /><APNavbar /><AdminFooter /></>} />
+        <Route path="/egg" element={<><Egg /><APNavbar /><AdminFooter /></>} />
+        <Route path="/pork" element={<><Pork /><APNavbar /><AdminFooter /></>} />
+        <Route path="/chicken" element={<><Chicken /><APNavbar /><AdminFooter /></>} />
+        <Route path="/singlechicken" element={<ChickenDetails />} />
+        <Route path="/vchicken" element={<><ViewChicken /><APNavbar /><AdminFooter /></>} />
+        <Route path="/upchicken" element={<><UpdateChicken /><APNavbar /><AdminFooter /></>} />
+        <Route path="/goatmilk" element={<><GoatMilk /><APNavbar /><AdminFooter /></>} />
+        <Route path="/goat" element={<><Goat /><APNavbar /><AdminFooter /></>} />
+
+        <Route path="/animsection" element={<><APNavbar/><AgriSections /><AdminFooter /></>} />
+        <Route path="/agrisection" element={<><APNavbar/><AnimalSections /><AdminFooter /></>} />
+        <Route path="/adminselect" element={<><APNavbar/><AdminNavi1 /><AdminFooter /></>} />
+        <Route path="/grassselect" element={<><APNavbar/><GrassrootSelect /><AdminFooter /></>} />
+        <Route path="/grasstypeselect" element={<><APNavbar/><GrassAdminSelect /><AdminFooter /></>} />
+        <Route path="/sanimsection" element={<><APNavbar/><AnimalSectionAdmin /><AdminFooter /></>} />
+        <Route path="/sagrisection" element={<><APNavbar/><AgriAdminSelector /><AdminFooter /></>} />
       </Routes>
     </Router>
   );

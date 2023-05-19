@@ -38,10 +38,8 @@ export default function HomeWhiteNavbar() {
               LAAIF
             </Typography>
             <div>
-              <Button color="secondary">Home</Button>
-
-              <Button color="secondary">About</Button>
-
+              <Button color="secondary" href="/">Home</Button>
+              <Button color="secondary" href="/aboutus">About</Button>
               <Button color="secondary">Contact</Button>
             </div>
           </Toolbar>
