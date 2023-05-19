@@ -7,6 +7,7 @@ export default function AnimalSections() {
       src: "./Assets/agriSections/rice.png",
       alt: "rice",
       text: "Rice Production",
+      link: "/clientrice"
     },
     {
       src: "./Assets/agriSections/fruits.png",
@@ -17,6 +18,7 @@ export default function AnimalSections() {
       src: "./Assets/agriSections/vege.png",
       alt: "vegetables",
       text: "Vegetable Production",
+      link: "/clientvegi"
     },
   ];
 
@@ -33,7 +35,7 @@ export default function AnimalSections() {
         <div className="gallery">
           {images.map((image, index) => (
             <div className="image-container" key={index}>
-              <a href={image.src}>
+              <a href={image.link}>
                 <img src={image.src} alt={image.alt} />
               </a>
               <div className="text-container">{image.text}</div>

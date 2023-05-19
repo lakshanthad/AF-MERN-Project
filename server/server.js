@@ -80,3 +80,11 @@ app.use("/agricultureProduction", agricultureRouter);
 const loginRouter = require("./Routes/Login-route");
 app.use("/login", loginRouter);
 
+//Rice production routes.
+const riceRouter = require("./Routes/Agriculture-routes/RiceProducion-route");
+app.use("/riceProduction", riceRouter);
+
+//Vegitabel production routes.
+const vegitableRouter = require("./Routes/Agriculture-routes/VegitableProduction-route");
+app.use("/vegitableProduction", vegitableRouter);
+
