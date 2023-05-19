@@ -14,5 +14,15 @@
     "nodemon": "^2.0.22",
     "path": "^0.12.7",
     "sharp": "^0.32.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+    
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "quad200",
+  "license": "ISC",
+  "description": ""
 }
