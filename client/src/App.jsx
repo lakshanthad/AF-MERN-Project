@@ -104,7 +104,6 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<><Login/> <LoginNav /> <AdminFooter /></>}></Route>
-        <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route path="/landingStaff" element={<><NavLandingStaff /><LandingPageStaff /></>} />
@@ -155,18 +154,18 @@ export default function App() {
         <Route path="/goat" element={<><Goat /><APNavbar /><AdminFooter /></>} />
 
         {/*Edited by kuls */}
-        <Route path="/vvegi" element={<><ViewVegi/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/svegi" element={<VegiDetails />} />
-        <Route path="/addvegi" element={<><AddVegi /><APNavbar /><Footer /></>} />
-        <Route path="/upvegi" element={<><UpdateVegi /><APNavbar /><Footer /></>} />
-        <Route path="/vrice" element={<><ViewRice/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/addrice" element={<><AddRice /><APNavbar /><Footer /></>} />
-        <Route path="/srice" element={<RiceDetails />} />
-        <Route path="/uprice" element={<><UpdateRice/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/clientvegi" element={<><ClientViewVegi/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/clientsvegi" element={<ClientVegiDetails />} />
-        <Route path="/clientrice" element={<><ClientViewRice/> <APNavbar /> <Footer /> </> }></Route>
-        <Route path="/clientsrice" element={<ClientRiceDetails />} />
+        <Route path="/vvegi" element={<><ViewVegi/> <APNavbar /> <AdminFooter /> </> }></Route>
+        <Route path="/svegi" element={<><VegiDetails /><APNavbar /> <AdminFooter /> </>} />
+        <Route path="/addvegi" element={<><AddVegi /><APNavbar /><AdminFooter /></>} />
+        <Route path="/upvegi" element={<><UpdateVegi /><APNavbar /><AdminFooter /></>} />
+        <Route path="/vrice" element={<><ViewRice/> <APNavbar /> <AdminFooter /> </> }></Route>
+        <Route path="/addrice" element={<><AddRice /><APNavbar /><AdminFooter /></>} />
+        <Route path="/srice" element={<><RiceDetails /><APNavbar /> <AdminFooter /> </>} />
+        <Route path="/uprice" element={<><UpdateRice/> <APNavbar /> <AdminFooter /> </> }></Route>
+        <Route path="/clientvegi" element={<><ClientViewVegi/> <HomeNavbar /> <Footer /> </> }></Route>
+        <Route path="/clientsvegi" element={<><ClientVegiDetails /><HomeNavbar /> <Footer /> </>} />
+        <Route path="/clientrice" element={<><ClientViewRice/> <HomeNavbar /> <Footer /> </> }></Route>
+        <Route path="/clientsrice" element={<><ClientRiceDetails /><HomeNavbar /> <Footer /> </>} />
 
         <Route path="/animsection" element={<><APNavbar/><AgriSections /><AdminFooter /></>} />
         <Route path="/agrisection" element={<><APNavbar/><AnimalSections /><AdminFooter /></>} />
