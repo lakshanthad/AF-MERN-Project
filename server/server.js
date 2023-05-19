@@ -56,9 +56,6 @@ app.use("/imageTest", imageRouter);
 const agricultureRouter = require("./Routes/AgricultureProducion-route");
 app.use("/agricultureProduction", agricultureRouter);
 
-//Login routes.
-const loginRouter = require("./Routes/Login-route");
-app.use("/login", loginRouter);
 
 //Rice production routes.
 const riceRouter = require("./Routes/Agriculture-routes/RiceProducion-route");
