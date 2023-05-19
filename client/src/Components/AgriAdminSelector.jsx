@@ -7,6 +7,7 @@ export default function AgriAdminSelector() {
       src: "./Assets/agriSections/rice.png",
       alt: "rice",
       text: "Rice Production",
+      link: "/vrice"
     
     },
     {
@@ -18,6 +19,7 @@ export default function AgriAdminSelector() {
       src: "./Assets/agriSections/vege.png",
       alt: "vegetables",
       text: "Vegetable Production",
+      link: "/vvegi"
     },
   ];
 
@@ -34,7 +36,7 @@ export default function AgriAdminSelector() {
         <div className="gallery">
           {images.map((image, index) => (
             <div className="image-container" key={index}>
-              <a href={image.src}>
+              <a href={image.link}>
                 <img src={image.src} alt={image.alt} />
               </a>
               <div className="text-container">{image.text}</div>

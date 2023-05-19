@@ -24,7 +24,6 @@ import Egg from "./Components/AnimalProduction/Egg";
 import Pork from "./Components/AnimalProduction/Pork";
 import GoatMilk from "./Components/AnimalProduction/GoatMilk";
 import Goat from "./Components/AnimalProduction/Goat";
-import Agri from "./Components/Agriculture/Agri";
 import APNavbar from "./Components/AnimalProduction/APNavbar";
 import Footer from "./Components/Footer";
 
@@ -82,13 +81,25 @@ import AgriAdminSelector from "./Components/AgriAdminSelector";
 //   element: PropTypes.element.isRequired
 // }
 
+import ViewRice from "./Components/AgricultureProduction/ViewRice";
+import AddRice from "./Components/AgricultureProduction/AddRice";
+import RiceDetails from "./Components/AgricultureProduction/RiceDetails";
+import ViewVegi from "./Components/AgricultureProduction/ViewVegi";
+import VegiDetails from "./Components/AgricultureProduction/VegiDetails";
+import AddVegi from "./Components/AgricultureProduction/AddVegi";
+import UpdateVegi from "./Components/AgricultureProduction/UpdateVegi";
+import UpdateRice from "./Components/AgricultureProduction/UpdateRice";
+import ClientViewVegi from "./Components/AgricultureProduction/ClientViewVegi";
+import ClientVegiDetails from "./Components/AgricultureProduction/ClientVegiDetails";
+import ClientViewRice from "./Components/AgricultureProduction/ClientViewRice";
+import ClientRiceDetails from "./Components/AgricultureProduction/ClientRiceDetails";
+
 export default function App() {
   return (
     <Router>
       <Routes>
       
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/agri" element={<><Agri/> <APNavbar /> <Footer /></>}></Route>
         <Route path="/test" element={<Test />}></Route>
         <Route path="/animal" element={<Animal />}></Route>
         <Route path="/landingStaff" element={<><NavLandingStaff /><LandingPageStaff /></>} />
@@ -141,6 +152,21 @@ export default function App() {
         <Route path="/grasstypeselect" element={<><HomeNavbar/><GrassAdminSelect /><Footer /></>} />
         <Route path="/sanimsection" element={<><HomeNavbar/><AnimalSectionAdmin /><Footer /></>} />
         <Route path="/sagrisection" element={<><HomeNavbar/><AgriAdminSelector /><Footer /></>} />
+
+        {/*Edited by kuls */}
+        <Route path="/vvegi" element={<><ViewVegi/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/svegi" element={<VegiDetails />} />
+        <Route path="/addvegi" element={<><AddVegi /><APNavbar /><Footer /></>} />
+        <Route path="/upvegi" element={<><UpdateVegi /><APNavbar /><Footer /></>} />
+        <Route path="/vrice" element={<><ViewRice/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/addrice" element={<><AddRice /><APNavbar /><Footer /></>} />
+        <Route path="/srice" element={<RiceDetails />} />
+        <Route path="/uprice" element={<><UpdateRice/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/clientvegi" element={<><ClientViewVegi/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/clientsvegi" element={<ClientVegiDetails />} />
+        <Route path="/clientrice" element={<><ClientViewRice/> <APNavbar /> <Footer /> </> }></Route>
+        <Route path="/clientsrice" element={<ClientRiceDetails />} />
+
       </Routes>
     </Router>
   );
