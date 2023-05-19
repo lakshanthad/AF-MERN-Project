@@ -4,14 +4,14 @@ import "./css/agriSection.css";
 export default function GrassrootSelect() {
   const images = [
     {
-      src: "./Assets/homePage/staff1.png",
+      src: "./Assets/homePage/grassAdmin.png",
       alt: "admin1",
       text: "Grassroot Officer",
       link: "/grasstypeselect"
    
     },
     {
-      src: "./Assets/homePage/satff2.png",
+      src: "./Assets/homePage/animgrass.png",
       alt: "staff2",
       text: "Ministry Staff",
       link: "/agriServices"

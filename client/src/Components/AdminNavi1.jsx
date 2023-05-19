@@ -7,7 +7,7 @@ export default function AdminNavi1() {
       src: "./Assets/homePage/staff1.png",
       alt: "admin1",
       text: "Grassroot Officer",
-      link: "/grassselect"
+      link: "/grasstypeselect"
     },
     {
       src: "./Assets/homePage/satff2.png",
